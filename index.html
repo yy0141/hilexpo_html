@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0から始めるアンドロイドのモーション制作</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="headline">
+            <div class="logo">
+                <img src="img/logo.png" alt="ATR">
+                <p>ATR</p>
+            </div>
+            <div class="title">
+                <h1>0から始めるアンドロイドのモーション制作</h1>
+            </div>
+        </div>
+        <div class="auther">
+            <img src="img/kdix_logo.png" alt="KDIX">
+            <div class="text">
+                <p class="name">久保, 藤木, 安井, 山本</p>
+                <p class="date">2025.00.00に更新</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="side-menu">
+            <div class="menu-contents">
+                <div class="menu-bar">
+                    <div class="menu-title">
+                        <h2>Contents</h2>
+                        <div class="underline-menu"></div>
+                    </div>
+                    <button class="toggle-btn">◀︎</button>
+                </div>
+                <script>
+                    // サイドメニュー開閉処理
+                    const toggleBtn = document.querySelector('.toggle-btn');
+                    const sideMenu = document.querySelector('.side-menu');
+                    const sideMenuContents = document.querySelector('.menu-contents');
+                    const mainContents = document.querySelector('.main-contents'); // メインコンテンツ
+
+                    toggleBtn.addEventListener('click', () => {
+                        sideMenu.classList.toggle('closed');
+                        sideMenuContents.classList.toggle('closed');
+
+                        // サイドメニューの開閉に応じてボタンのテキストを変更
+                        if (sideMenu.classList.contains('closed')) {
+                            toggleBtn.textContent = '▶︎'; // メニューを開くボタン
+                        } else {
+                            toggleBtn.textContent = '◀︎'; // メニューを閉じるボタン
+                        }
+                    });
+                </script>                             
+                <div class="accordion">
+                    <button class="accordion-button">01 環境構築</button>
+                    <div class="accordion-panel">
+                      <a href="#section1-1">01 Unity Hubのインストール</a>
+                      <a href="#section1-2">02 Unityのインストール</a>
+                      <a href="#section1-3">03 Unityエディタのインストール</a>
+                      <a href="#section1-4">04 プロジェクトの追加</a>
+                      <a href="#section1-4">05 Sceneの切り替え</a>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="accordion-button">02 オブジェクトの詳細</button>
+                    <div class="accordion-panel">
+                      <a href="#section2-1">01 Miracle Humanとは</a>
+                      <a href="#section2-2">02 Spring Manの構成</a>
+                      <a href="#section2-3">03 アンドロイドの部位</a>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const buttons = document.querySelectorAll('.accordion-button');
+                buttons.forEach(button => {
+                  button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                  });
+                });
+            </script>              
+        </div>
+        <div class="main-contents">
+            <div class="theme">
+                <img src="img/theme.png" alt="いのちの未来">
+            </div>
+            <div class="contents">
+                <h2>CONTENTS</h2>
+                <div class="underline-contents"></div>
+                <div class="outline-block">
+                    <div class="outline">
+                        <img src="img/outline1.png" alt="環境構築" class="outline1">
+                        <div>01 環境構築</div>
+                    </div>
+                    <div class="outline">
+                        <img src="img/outline2.png" alt="オブジェクトの詳細" class="outline2">
+                        <div>02 オブジェクトの詳細</div>
+                    </div>
+                    <div class="outline">
+                        <img src="img/outline3.png" alt="基本操作" class="outline3">
+                        <div>03 基本操作</div>
+                    </div>
+                    <div class="outline">
+                        <img src="img/outline4.png" alt="事例紹介" class="outline4">
+                        <div>04 事例紹介</div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-topic">
+                <div id="section1-1">
+                    <h2>01 環境構築</h2>
+                    <div class="underline-headline"></div>
+                    <h3>01 Unity Hubのインストール</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
