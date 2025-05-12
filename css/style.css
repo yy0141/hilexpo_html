@@ -30,7 +30,7 @@ body {
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
 .header .headline,
@@ -39,46 +39,38 @@ body {
     z-index: 3;
 }
 
-
+.header {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+}
 .headline {
     display: flex;
     align-items: center;
+    margin-top: 20px;
     margin-left: 100px;
 }
-
 .logo {
     display: flex;
     flex-direction: column;  
-    justify-content: center; 
+    align-items: center;
     text-align: center;
-    margin-top: 20px;
+    margin-right: 20px; /* h1との間隔 */
 }
 .logo img {
-    display: inline-block;
-    width: 100px;
+    width: 150px;
 }
-.logo p {
-    position: relative;
-    color: rgb(190, 190, 190);
-}
-
-.title h1{
-    display: flex;
-    justify-content: center; 
-    align-items: center;   
-    text-align: center;
+.title h1 {
     font-size: 50px;
-    color: rgb(233, 233, 233);
     font-weight: bold;
-    margin-left: 20px;
+    color: rgb(233, 233, 233);
 }
 
 .auther {
     display: flex;
     justify-content: left; 
     align-items: center;   
-    margin-left: 105px;
-    margin-top: -15px;
+    margin-left: 130px;
 }
 .auther img {
     display: inline-block;
@@ -95,8 +87,8 @@ body {
 
 .container {
     display: flex;
-    background-color: black;
     margin: 0 auto;
+    background-color: black;
 }
 .main-contents {
     width: 80%; 
@@ -105,24 +97,26 @@ body {
     transition: width 0.3s ease; 
 }
 .side-menu {
-    position: sticky;
-    top: 200px;
-    left: 0;
-    width: 20%;
-    height: calc(100vh - 200px); 
-    overflow-y: hidden;
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    width: 20%;
+    height: 100vh; 
+    overflow-y: auto;
     color: white;
+    transition: width 0.3s ease; 
+}
+.side-menu .menu-contents {
+    margin-bottom: 100px;
 }
 .side-menu.closed {
     width: 1.5%;
-    padding: 0;
     transition: width 0.5s ease; 
 }
 .menu-contents.closed {
     margin-left: -300px;
-    padding: 0;
     transition: width 0.3s ease; 
 }
 .side-menu.closed ~ .main-contents {
@@ -134,8 +128,8 @@ body {
 
 .menu-bar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 .menu-bar .menu-title .underline-menu {
     width: 250px;
@@ -146,73 +140,146 @@ body {
     font-size: 35px;
     font-weight: bold;
     color: white;
-    margin: 0;
 }
 .menu-contents .menu-bar .toggle-btn {
-    background-color: #b1b1b1;
     font-size: 20px;
     font-weight: bold;
     color: white;
+    background-color: #b1b1b1;
     border: none; 
     cursor: pointer;
 }
-.accordion-button {
-    background-color: #000000;
-    color: white;
-    padding: 10px;
+.accordion-button-1 {
     width: 90%;
+    padding: 10px;
+    margin-left: 10px;
     text-align: left;
+    font-size: 20px;
+    color: white;
+    background-color: #000000;
     border: none;
     cursor: pointer;
-    font-size: 20px;
-    margin-left: 10px;
 }
-.accordion-button:hover {
+.accordion-button-2 {
+    width: 90%;
+    padding: 10px;
+    margin-left: 30px;
+    text-align: left;
+    font-size: 17px;
+    color: white;
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+}
+.accordion-button-2 .indent {
+    display: inline-block;
+    padding-left: 1.7em;
+}
+.accordion-button-1:hover {
     color: #b1b1b1;
 }  
-.accordion-panel {
+.accordion-button-2:hover {
+    color: #b1b1b1;
+}  
+.accordion-panel-1 {
     display: none;
-    background-color: #878787;
     margin-left: 35px;
+    background-color: #878787;
 }
-.accordion-panel a {
+.accordion-panel-2 {
+    display: none;
+    margin-left: 65px;
+    background-color: #878787;
+}
+.accordion-panel-1 a {
     display: block;
-    color: white;
     padding: 8px;
+    color: white;
     text-decoration: none;
 }
-.accordion-panel a:hover {
+.accordion-panel-1 a:hover {
+    background-color: #4a4a4a;
+}  
+.accordion-panel-2 a {
+    display: block;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+}
+.accordion-panel-2 a:hover {
     background-color: #4a4a4a;
 }  
 
 .theme {
-    text-align: center;
-    background-color: rgb(30, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: rgb(0, 0, 0);
 }
-.theme img {
-    display: inline-block;
-    width: 800px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.slider-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;       
+    width: 80%;
+    min-width: 900px;
+    height: 420px;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
 }
+.slider {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+}
+.slider-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 400px;
+    flex-shrink: 0;
+    margin: 0 25px;
+    background-color: black;
+    border: 5px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(30, 30, 30, 0.7);
+}
+.slider img {
+    width: 650px;
+    height: auto;
+}
+.slider-button {
+    border: none;
+    padding: 10px;
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+}  
+.slider-button:hover {
+    color: rgb(120, 120, 120);
+}  
 
 .contents {
     text-align: center;
-    background-color: rgb(70, 70, 70);
     padding-bottom: 15px;
     margin-bottom: 20px;
+    background-color: rgb(70, 70, 70);
 }
 .contents h2 {
+    margin-bottom: 5px;
     font-size: 25px;
     font-weight: bold;
     color: rgb(190, 190, 190);
-    margin-bottom: 5px;
 }
 .contents .underline-contents {
     width: 1050px;
     height: 2px;
-    background-color: rgb(190, 190, 190);
     margin: 0 auto 20px auto;
+    background-color: rgb(190, 190, 190);
 }
 .contents .outline-block {
     display: flex;
@@ -220,16 +287,16 @@ body {
     gap: 20px;       
 }
 .contents .outline {
-    background-color: rgb(220, 220, 220); 
-    width: 250px;
-    height: 250px;
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    border-radius: 8px;
     display: flex;
     flex-direction: column; 
     align-items: center;
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    background-color: rgb(220, 220, 220); 
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 8px;
 }
 .contents .outline img {
     width: 200px;
@@ -239,45 +306,91 @@ body {
     width: 300px;
 }
 .contents .outline div {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: bold;
+}
+.contents .outline {
+    text-decoration: none;
+    color: inherit;        
+}
+.contents .outline a {
+    display: block;
+    transition: background-color 0.2s;
+}
+.contents .outline:hover {
+    background-color: rgba(205, 205, 205, 0.6);
 }
 
 .main-topic {
-    background-color: #ffffff;
     width: 100%;
+    max-width: 1110px; 
+    margin-left: 20px;
+    background-color: #ffffff;
     border: 2px solid #eaeaea;
     border-radius: 8px; 
     box-shadow: 0 2px 8px rgba(160, 160, 160, 0.4);
-    max-width: 1110px; 
-    margin-left: 20px;
 }
-.main-topic .section {
-    padding-bottom: 20px;
+.main-topic .section-1 {
+    margin-bottom: 50px;
 }
-.main-topic .underline-headline {
+.main-topic .section-1 .section-2 {
+    margin-bottom: 35px;
+}
+.main-topic .section-3 {
+    margin-bottom: 20px;
+}
+.main-topic .underline-headline-1 {
     width: 1050px;
     height: 4px;
-    background-color: rgb(128, 128, 128);
     margin: 0 0 20px 10px;
+    background-color: rgb(128, 128, 128);
+}
+.main-topic .underline-headline-2 {
+    width: 1050px;
+    height: 2px;
+    margin: 0 0 20px 20px;
+    background-color: rgb(128, 128, 128);
 }
 .main-topic h2 {
+    margin-left: 30px;
     font-size: 40px;
     font-weight: bold;
-    margin-left: 30px;
 }
 .main-topic h3 {
+    margin-left: 30px;
+    margin-bottom: 5px;
     font-size: 25px;
     font-weight: 600;
     color: rgb(50, 50, 50);
-    margin-left: 30px;
-    margin-bottom: 5px;
 }
-.main-topic p {
+.main-topic h4 {
+    margin-left: 45px;
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(50, 50, 50);
+}
+.main-topic .section-1 p {
     width: 1050px;
+    margin-left: 45px;
+    margin-bottom: 20px;
     font-size: 18px;
     letter-spacing: 0.05em;
     color: rgb(50, 50, 50);
-    margin-left: 30px;
+}
+.main-topic .section-2 p {
+    width: 1050px;
+    margin-left: 45px;
     margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: rgb(50, 50, 50);
+}
+.main-topic .section-3 p {
+    width: 1050px;
+    margin-left: 55px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: rgb(50, 50, 50);
 }
