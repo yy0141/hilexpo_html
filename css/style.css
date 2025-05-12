@@ -3,6 +3,7 @@
 body {
     font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
     font-size: 15px;
+    overflow-x: hidden;
 }
 
 .header {
@@ -99,7 +100,7 @@ body {
 }
 .main-contents {
     width: 80%; 
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     overflow-y: auto;
     transition: width 0.3s ease; 
 }
@@ -117,15 +118,18 @@ body {
 .side-menu.closed {
     width: 1.5%;
     padding: 0;
-    transition: width 0.3s ease; 
+    transition: width 0.5s ease; 
 }
 .menu-contents.closed {
-    margin-left: -400px;
+    margin-left: -300px;
     padding: 0;
     transition: width 0.3s ease; 
 }
 .side-menu.closed ~ .main-contents {
-    width: 95%; 
+    width: 98.5%; 
+}
+.side-menu.closed ~ .main-contents .main-topic {
+    margin-left: 150px; 
 }
 
 .menu-bar {
@@ -241,19 +245,39 @@ body {
 
 .main-topic {
     background-color: #ffffff;
+    width: 100%;
+    border: 2px solid #eaeaea;
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(160, 160, 160, 0.4);
+    max-width: 1110px; 
     margin-left: 20px;
 }
+.main-topic .section {
+    padding-bottom: 20px;
+}
 .main-topic .underline-headline {
-    width: 1200px;
+    width: 1050px;
     height: 4px;
     background-color: rgb(128, 128, 128);
-    margin: 0 auto 20px auto;
+    margin: 0 0 20px 10px;
 }
 .main-topic h2 {
     font-size: 40px;
     font-weight: bold;
+    margin-left: 30px;
 }
 .main-topic h3 {
     font-size: 25px;
-    margin-left: 20px;
+    font-weight: 600;
+    color: rgb(50, 50, 50);
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+.main-topic p {
+    width: 1050px;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: rgb(50, 50, 50);
+    margin-left: 30px;
+    margin-bottom: 20px;
 }
