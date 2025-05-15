@@ -8,7 +8,7 @@ body {
 
 .header {
     position: relative;
-    height: 23vh;
+    height: 25vh;
     overflow: hidden;
 }
 .header::before {
@@ -21,6 +21,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
+    opacity: 0.5;
     filter: blur(2px);
     z-index: 1;
 }
@@ -112,7 +113,7 @@ body {
     padding-top: 1vh;
 }
 .side-menu.closed {
-    width: 2.5%;
+    width: 3%;
     transition: width 0.5s ease; 
 }
 .menu-contents.closed {
@@ -120,7 +121,7 @@ body {
     transition: width 0.3s ease; 
 }
 .side-menu.closed ~ .main-contents {
-    width: 97.5%; 
+    width: 97%; 
 }
 
 .menu-bar .menu-title .underline-menu {
@@ -133,12 +134,15 @@ body {
     font-weight: bold;
     color: white;
 }
-.hanbarger-menu {
+.hamburger-menu {
     display: flex;
     justify-content: flex-start;
 }
-.menu-contents.closed .hanbarger-menu {
-    transform: translateX(calc(100% - 2.5vw));
+.hamburger-menu img:hover {
+    opacity: 0.5;
+}
+.menu-contents.closed .hamburger-menu {
+    transform: translateX(calc(100% - 3vw));
     transition: transform 0.4s ease; 
 }
 .menu-contents .toggle-btn img {
@@ -292,6 +296,7 @@ body {
 .contents .outline {
     display: flex;
     flex-direction: column; 
+    justify-content: center;
     align-items: center;
     width: 17.5vw;
     height: 17.5vw;
@@ -304,9 +309,6 @@ body {
 .contents .outline img {
     width: 85%;
     padding-bottom: 1vh;
-}
-.contents .outline .outline4 {
-    width: 128%;
 }
 .contents .outline div {
     font-size: 1.3vw;
@@ -360,7 +362,7 @@ body {
 }
 .main-topic h2 {
     padding-left: 2vw;
-    font-size: 2.8vw;
+    font-size: 2.3vw;
     font-weight: bold;
 }
 .main-topic h3 {
