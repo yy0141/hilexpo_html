@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0から始めるアンドロイドのモーション制作</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="headline">
+            <a href="https://www.atr.jp/" target="_blank" class="logo">
+                <img src="img/logo.png" alt="ATR">
+            </a>
+            <div class="title">
+                <a href="index.html">0から始めるアンドロイドのモーション制作</a>
+            </div>
+        </div>
+        <div class="auther">
+            <a href="https://www.kindai.ac.jp/informatics/" target="_blank" class="logo">
+                <img src="img/kdix_logo.png" alt="KDIX">
+            </a>
+            <div class="text">
+                <p class="name">久保, 藤木, 安井, 山本</p>
+                <p class="date">2025.00.00に更新</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="side-menu">
+            <div class="menu-contents">
+                <div class="hamburger-menu">
+                    <button class="toggle-btn">
+                        <img src="img/hamburger_menu.png" alt="ハンバーガーメニュー">
+                    </button>
+                </div>
+                <script>
+                    // サイドメニュー開閉処理
+                    const toggleBtn = document.querySelector('.toggle-btn');
+                    const sideMenu = document.querySelector('.side-menu');
+                    const sideMenuContents = document.querySelector('.menu-contents');
+
+                    toggleBtn.addEventListener('click', () => {
+                        sideMenu.classList.toggle('closed');
+                        sideMenuContents.classList.toggle('closed');
+                    });
+                </script>
+                <div class="menu-title">
+                    <h2>Contents</h2>
+                    <div class="underline-menu"></div>
+                </div>                       
+                <div class="accordion">
+                    <button class="accordion-button-1">01 環境構築</button>
+                    <div class="accordion-panel-1">
+                      <a href="#section1-1">01 Unity Hubのインストール</a>
+                      <a href="#section1-2">02 Unityエディターのインストール</a>
+                      <a href="#section1-3">03 プロジェクトの追加</a>
+                      <a href="#section1-4">04 Sceneの切り替え</a>
+                    </div>
+                </div>
+                <div class="menu-link">
+                    <a href="page2.html">02 オブジェクトの詳細</a>
+                    <a href="page3.html">03 モーションの作成方法</a>
+                    <a href="page4.html">04 事例紹介</a>
+                </div>
+            </div> 
+            <script>
+                const buttons_1 = document.querySelectorAll('.accordion-button-1');
+                buttons_1.forEach(button => {
+                  button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                  });
+                });
+
+                const buttons_2 = document.querySelectorAll('.accordion-button-2');
+                buttons_2.forEach(button => {
+                  button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                  });
+                });
+            </script>              
+        </div>
+        <div class="main-contents">
+            <div class="main-topic">
+                <div class="main-topic-block">
+                    <div class="section-1 section1" id="section1">
+                        <h2>01 環境構築</h2>
+                        <div class="underline-headline-1"></div>
+                        <p>
+                            環境構築として、アンドロイドのモーションを簡易に制作するために必要なツールをインストールしていきます。<br>
+                            すでにUnityのインストールをされている方は、「03 Unityエディターのインストール」から読み始めてください。
+                        </p>
+                        <div class="section-2 section1" id="section1-1">
+                            <h3>01 Unity Hubのインストール</h3>
+                            <p>
+                                今回は、アンドロイドのモーションを簡易に制作するためにUnityと呼ばれるゲームエンジンを使用します。<br>
+                                以下のリンクから自身の環境に合致したUnity Hubをインストールしてください。
+                                <a href= "https://unity.com/ja/download" target="_blank">https://unity.com/ja/download</a>
+                                <img src="img/unity_install.jpg" class="None">
+                            </p>
+                        </div>
+                        <div class="section-2 section1" id="section1-2">
+                            <h3>02 Unityエディターのインストール</h3>
+                            <p>
+                                以下のリンクから「2021」、「LTS」を選択し、「2021.3.16f1」を選択してください。
+                                <a href= "https://unity.com/ja/releases/editor/archive" target="_blank">https://unity.com/ja/releases/editor/archive</a>
+                                <img src="img/unityeditor_select.jpg" class="None"></br>
+                                installを押した後、「Unity Hub.appを開く」を押し、自身の環境に合致したエディターをインストールしてください。</br>
+                                <img src="img/unityeditor_install.jpg" class="None">
+                            </p>
+                        </div>
+                        <div class="section-2 section1" id="section1-3">
+                            <h3>03 プロジェクトの追加</h3>
+                            <p>
+                                Unity Hubを開き、「Add」から「Add project from disk」を選択し、コンピュータ内の「MiracleHuman」フォルダを選択してください。</br>
+                                <img src="img/project_add.jpg" class="None">
+                            </p>
+                        </div>
+                        <div class="section-2 section1" id="section1-4">
+                            <h3>04 Sceneの切り替え</h3>
+                            <p>
+                                追加したプロジェクトを選択し、Unityを起動してください。</br>
+                                その後、画面左下の「Assets」内にある「Scenes」フォルダを選択してください。</br>
+                                選択した後、モーションを作成したいアンドロイドの種類を選択してください。</br>
+                                <img src="img/scenes_select.jpg" class="None">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

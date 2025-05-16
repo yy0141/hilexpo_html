@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0から始めるアンドロイドのモーション制作</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="headline">
+            <a href="https://www.atr.jp/" target="_blank" class="logo">
+                <img src="img/logo.png" alt="ATR">
+            </a>
+            <div class="title">
+                <a href="index.html">0から始めるアンドロイドのモーション制作</a>
+            </div>
+        </div>
+        <div class="auther">
+            <a href="https://www.kindai.ac.jp/informatics/" target="_blank" class="logo">
+                <img src="img/kdix_logo.png" alt="KDIX">
+            </a>
+            <div class="text">
+                <p class="name">久保, 藤木, 安井, 山本</p>
+                <p class="date">2025.00.00に更新</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="side-menu">
+            <div class="menu-contents">
+                <div class="hamburger-menu">
+                    <button class="toggle-btn">
+                        <img src="img/hamburger_menu.png" alt="ハンバーガーメニュー">
+                    </button>
+                </div>
+                <script>
+                    // サイドメニュー開閉処理
+                    const toggleBtn = document.querySelector('.toggle-btn');
+                    const sideMenu = document.querySelector('.side-menu');
+                    const sideMenuContents = document.querySelector('.menu-contents');
+
+                    toggleBtn.addEventListener('click', () => {
+                        sideMenu.classList.toggle('closed');
+                        sideMenuContents.classList.toggle('closed');
+                    });
+                </script>
+                <div class="menu-title">
+                    <h2>Contents</h2>
+                    <div class="underline-menu"></div>
+                </div>                  
+                <div class="menu-link">
+                    <a href="page1.html">01 環境構築</a>
+                </div>     
+                <div class="accordion">
+                    <button class="accordion-button-1">02 オブジェクトの詳細</button>
+                    <div class="accordion-panel-1">
+                      <a href="#section2-1">01 Miracle Humanとは</a>
+                      <a href="#section2-2">02 Spring Manの構成</a>
+                      <a href="#section2-3">03 アンドロイドの部位</a>
+                    </div>
+                </div>
+                <div class="menu-link">
+                    <a href="page3.html">03 モーションの作成方法</a>
+                    <a href="page4.html">04 事例紹介</a>
+                </div>
+            </div> 
+            <script>
+                const buttons_1 = document.querySelectorAll('.accordion-button-1');
+                buttons_1.forEach(button => {
+                  button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                  });
+                });
+
+                const buttons_2 = document.querySelectorAll('.accordion-button-2');
+                buttons_2.forEach(button => {
+                  button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                  });
+                });
+            </script>              
+        </div>
+        <div class="main-contents">
+            <div class="main-topic">
+                <div class="main-topic-block">
+                    <div class="section-1 section2" id="section2">
+                        <h2>02 オブジェクトの詳細</h2>
+                        <div class="underline-headline-1"></div>
+                        <p>
+                            ここに文字を書きます。
+                        </p>
+                        <div class="section-2 section2-1" id="section2-1">
+                            <h3>01 Miracle Humanとは</h3>
+                            <p>
+                                ここに文字を書きます。
+                            </p>
+                        </div>
+                        <div class="section-2 section2-2" id="section2-2">
+                            <h3>02 Spring Manの構成</h3>
+                            <p>
+                                ここに文字を書きます。
+                            </p>
+                        </div>
+                        <div class="section-2 section2-3" id="section2-3">
+                            <h3>03 アンドロイドの部位</h3>
+                            <p>
+                                ここに文字を書きます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

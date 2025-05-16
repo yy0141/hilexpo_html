@@ -66,6 +66,13 @@ body {
     font-weight: bold;
     color: rgb(233, 233, 233);
 }
+.title a {
+    padding-left: 1vw;
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: rgb(233, 233, 233);
+    text-decoration: none;
+}
 
 .auther {
     display: flex;
@@ -124,6 +131,9 @@ body {
     width: 97%; 
 }
 
+.side-menu {
+    height: 100%;
+}
 .menu-bar .menu-title .underline-menu {
     width: 18vw;
     height: 2px;
@@ -150,7 +160,11 @@ body {
     border: none; 
     cursor: pointer;
 }
-.accordion-button-1 {
+.menu-contents .menu-link {
+    display: flex;
+    flex-direction: column;
+}
+.menu-contents .menu-link a {
     width: 90%;
     padding: 0.5vw;
     margin-left: 0.5vw;
@@ -158,11 +172,26 @@ body {
     font-size: 1.4vw;
     color: white;
     background-color: #000000;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+.menu-contents .menu-link a:hover {
+    opacity: 50%;
+}
+.accordion-button-1 {
+    width: 90%;
+    padding: 0.5vw;
+    margin-left: 0.5vw;
+    text-align: left;
+    font-size: 1.4vw;
+    color: rgb(0, 208, 255);
+    background-color: #000000;
     border: none;
     cursor: pointer;
 }
 .accordion-button-2 {
-    width: 90%;
+    width: 120%;
     padding: 0.5vw;
     margin-left: 1.5vw;
     text-align: left;
@@ -177,11 +206,15 @@ body {
     padding-left: 1.7em;
 }
 .accordion-button-1:hover {
-    color: #b1b1b1;
+    opacity: 50%;
 }  
 .accordion-button-2:hover {
-    color: #b1b1b1;
+    opacity: 50%;
 }  
+.accordion-button-panel {
+    display: none;
+    width: 15.5vw;
+}
 .accordion-panel-1 {
     display: none;
     width: 15.5vw;
@@ -330,6 +363,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 7vh;
+    padding-bottom: 7vh;
 }
 .main-topic-block {
     width: 90%;
@@ -375,7 +409,7 @@ body {
 .main-topic h4 {
     padding-left: 3.5vw;
     padding-bottom: 1vh;
-    font-size: 22px;
+    font-size: 1.5vw;
     font-weight: 600;
     color: rgb(50, 50, 50);
 }
@@ -399,4 +433,9 @@ body {
     font-size: 1.3vw;
     letter-spacing: 0.05em;
     color: rgb(50, 50, 50);
+}
+.main-topic img {
+    width: 60vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
