@@ -13,7 +13,7 @@
     <div class="header">
         <div class="headline">
             <a href="https://www.atr.jp/" target="_blank" class="logo">
-                <img src="img/logo.png" alt="ATR">
+                <img src="img/atr_logo.png" alt="ATR">
             </a>
             <div class="title">
                 <a href="index.html">0から始めるアンドロイドのモーション制作</a>
@@ -53,14 +53,18 @@
                     <div class="underline-menu"></div>
                 </div>                  
                 <div class="menu-link">
+                    <a href="index.html">00 ホーム</a>
                     <a href="page1.html">01 環境構築</a>
                 </div>     
                 <div class="accordion">
-                    <button class="accordion-button-1">02 オブジェクトの詳細</button>
+                    <button class="accordion-button-1">
+                        02 Miracle Human</br>
+                        
+                    </button>
                     <div class="accordion-panel-1">
                       <a href="#section2-1">01 Miracle Humanとは</a>
                       <a href="#section2-2">02 Spring Manの構成</a>
-                      <a href="#section2-3">03 アンドロイドの部位</a>
+                      <a href="#section2-3">03 操作方法</a>
                     </div>
                 </div>
                 <div class="menu-link">
@@ -73,15 +77,7 @@
                 buttons_1.forEach(button => {
                   button.addEventListener('click', () => {
                     const panel = button.nextElementSibling;
-                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-                  });
-                });
-
-                const buttons_2 = document.querySelectorAll('.accordion-button-2');
-                buttons_2.forEach(button => {
-                  button.addEventListener('click', () => {
-                    const panel = button.nextElementSibling;
-                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
                   });
                 });
             </script>              
@@ -90,28 +86,77 @@
             <div class="main-topic">
                 <div class="main-topic-block">
                     <div class="section-1 section2" id="section2">
-                        <h2>02 オブジェクトの詳細</h2>
+                        <h2>02 Miracle Human</h2>
                         <div class="underline-headline-1"></div>
                         <p>
                             ここに文字を書きます。
                         </p>
+                        <div class="line-break"></div>
+
                         <div class="section-2 section2-1" id="section2-1">
                             <h3>01 Miracle Humanとは</h3>
                             <p>
                                 ここに文字を書きます。
                             </p>
                         </div>
+                        <div class="line-break"></div>
+
                         <div class="section-2 section2-2" id="section2-2">
                             <h3>02 Spring Manの構成</h3>
                             <p>
                                 ここに文字を書きます。
                             </p>
                         </div>
+                        <div class="line-break"></div>
+                        
                         <div class="section-2 section2-3" id="section2-3">
-                            <h3>03 アンドロイドの部位</h3>
-                            <p>
-                                ここに文字を書きます。
-                            </p>
+                            <h3>03 操作方法</h3>
+                            <div class="section-2 section2-3-1" id="section2-3-1">
+                                <h4>Game</h4>
+                                <div class="img">
+                                    <img src="img/page2/game.jpg">
+                                </div>
+                                <p>
+                                    ボタンを押すことで各ウィンドウを展開することが可能です。</br>
+                                    今回は使用頻度が多いMotion・Faceウィンドウについて見てみましょう。</br>
+                                    <span style="color: red;">※Parameters・Axisウィンドウはほとんど使用しません。</span></br>
+                                </p>
+                                <div class="img">
+                                    <img src="img/page2/window_open.jpg">
+                                </div>
+                                <p>
+                                    <span style="color: red;">
+                                        ※DefaultPoseは各Motionと各Controllerのみが初期位置に戻ります。Facialsは初期状態に戻りません。</br>
+                                        &ensp; また、「姿勢保持」をオンにしているAngle Motionを再生し、DefaultPoseを行っても、</br>
+                                        &ensp; その部位は初期位置に戻らなくなります。
+                                    </span>
+                                </p>
+                                <div class="line-break"></div>
+
+                                <h4>Scene</h4>
+                                <p>
+                                    Scene画面を使用し、以下のように両手の位置や角度を可動域内で自由に動かすことができます。</br>
+                                    <span style="color: red;">
+                                        ※操作前に、Debug Settingsで「Motion Edit Mode On」を押す必要があります。
+                                    </span>
+                                </p>
+                                <div class="video-row">
+                                    <video src="mov/righthandcontroller_position.mov" muted controls></video>
+                                    <video src="mov/righthandcontroller_rotate.mov" muted controls></video>
+                                </div>
+                                <div class="line-break"></div>
+
+                                <h4>Debug Settings</h4>
+                                <div class="img">
+                                    <img src="img/page2/debugsettings.jpg">
+                                </div>
+                                <p>
+                                </p>
+                                <p>
+                                    その他のUnityの操作方法については以下のサイトを参考にしてください。
+                                    <a href= "https://docs.unity3d.com/ja/2020.3/Manual/UsingTheEditor.html" target="_blank">https://docs.unity3d.com/ja/2020.3/Manual/UsingTheEditor.html</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
