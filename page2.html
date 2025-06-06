@@ -7,6 +7,8 @@
     <title>0から始めるアンドロイドのモーション制作</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <script src="js/lightbox-plus-jquery.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -96,16 +98,70 @@
                         <div class="section-2 section2-1" id="section2-1">
                             <h3>01 Miracle Humanとは</h3>
                             <p>
-                                ここに文字を書きます。
+                                Miracle Humanとはアンドロイドのモーション制作を行うためのツールであり、これを使用することでノーコードでの開発が可能になります。
+                                Unityを使用しているため、Unity初心者の方は最初に少しつまずくかもしれません。なので、この章をじっくり読み、理解をされてから次に進むことを推奨しています。</br>
+                                また、Miracle Humanの操作方法は説明しますが、UNity自体の使用方法をここでは説明しないため、詳しい操作方法についてはUnity公式の操作方法をご確認ください。
                             </p>
                         </div>
                         <div class="line-break"></div>
 
                         <div class="section-2 section2-2" id="section2-2">
-                            <h3>02 Spring Manの構成</h3>
+                            <h3>02 オブジェクトの構成</h3>
                             <p>
-                                ここに文字を書きます。
+                                オブジェクトの中で重要になるのは「Object」と「SpringMan」です。
+                                特に、「SpringMan」はモーションを制作する上で必ず使用するものであり、ここに含まれるオブジェクトを理解することが重要となってきます。
                             </p>
+                            <div class="img">
+                                <a href="img/page2/hierarchy__all.jpg" rel="lightbox"><img src="img/page2/hierarchy__all.jpg"></a>
+                            </div></br>
+                            <p>
+                                SpringManは以下のように構成されており、枠内のオブジェクトを中心に使用していきます。</br>
+                                「Actions」「Motions」「Facials」はモーションを制作するために使用し、
+                                「BodyController」「HeadController」「EyeController」「LeftHandController」「RightHandController」は各部位の制御として使用します。
+                                また、「BodyBase_Joint」には50以上にのアンドロイドの各軸が含まれており、これらを制御することでさまざまな動作を作成することができます。
+                            </p>
+                            <div class="img">
+                                <a href="img/page2/hierarchy_springman.jpg" rel="lightbox"><img src="img/page2/hierarchy_springman.jpg"></a>
+                            </div></br>
+                            <p>
+                                BodyBase_Jointに含まれているオブジェクトについては以下の表をご確認ください。
+                            </p>
+                            <div class="maintable" id ='maintable'></div>
+                            <script>
+                                let request = new XMLHttpRequest();
+
+                                request.open('GET', 'table/n1l.json');
+                                request.send();
+
+                                request.onreadystatechange = () => {
+                                    if (request.readyState == 4 && request.status == 200) {
+                                        let json = JSON.parse(request.responseText);
+                                        delete json[0].Number;
+                                        var table = document.createElement('table');
+                                        var tr = document.createElement('tr');
+
+                                        for (key in json[0]) {
+                                            var th = document.createElement('th');
+                                            th.textContent = key;
+                                            tr.appendChild(th);
+                                        }
+                                        table.appendChild(tr);
+
+                                        for (var i = 0; i < json.length; i++) {
+                                            var tr = document.createElement('tr');
+                                            for (key in json[0]) {
+                                                delete key.Number;
+                                                var td = document.createElement('td');
+                                                td.textContent = json[i][key];
+                                                tr.appendChild(td);
+                                            }
+                                            table.appendChild(tr);
+                                        }
+
+                                        document.getElementById('maintable').appendChild(table);
+                                    }
+                                }
+                            </script>
                         </div>
                         <div class="line-break"></div>
                         
@@ -114,7 +170,7 @@
                             <div class="section-2 section2-3-1" id="section2-3-1">
                                 <h4>Game</h4>
                                 <div class="img">
-                                    <img src="img/page2/game.jpg">
+                                    <a href="img/page2/game.jpg" rel="lightbox"><img src="img/page2/game.jpg"></a>
                                 </div>
                                 <p>
                                     ボタンを押すことで各ウィンドウを展開することが可能です。</br>
@@ -122,7 +178,7 @@
                                     <span style="color: red;">※Parameters・Axisウィンドウはほとんど使用しません。</span></br>
                                 </p>
                                 <div class="img">
-                                    <img src="img/page2/window_open.jpg">
+                                    <a href="img/page2/window_open.jpg" rel="lightbox"><img src="img/page2/window_open.jpg"></a>
                                 </div>
                                 <p>
                                     <span style="color: red;">
@@ -148,7 +204,7 @@
 
                                 <h4>Debug Settings</h4>
                                 <div class="img">
-                                    <img src="img/page2/debugsettings.jpg">
+                                    <a href="img/page2/debugsettings.jpg" rel="lightbox"><img src="img/page2/debugsettings.jpg"></a>
                                 </div>
                                 <p>
                                 </p>
@@ -157,6 +213,12 @@
                                     <a href= "https://docs.unity3d.com/ja/2020.3/Manual/UsingTheEditor.html" target="_blank">https://docs.unity3d.com/ja/2020.3/Manual/UsingTheEditor.html</a>
                                 </p>
                             </div>
+                            <script>
+                                lightbox.option({
+                                'alwaysShowNavOnTouchDevices': true,
+                                'disableScrolling': true,
+                                })
+                            </script>
                         </div>
                     </div>
                 </div>

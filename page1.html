@@ -7,6 +7,8 @@
     <title>0から始めるアンドロイドのモーション制作</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <script src="js/lightbox-plus-jquery.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -100,11 +102,11 @@
                             <h3>01 Unity Hubのインストール</h3>
                             <p>
                                 今回は、アンドロイドのモーションを簡易に制作するためにUnityと呼ばれるゲームエンジンを使用します。<br>
-                                以下のリンクから自身の環境に合致したUnity Hubをインストールしてください。
+                                以下のリンクから自身の環境に合致したUnity Hubをインストールしてください。<br>
                                 <a href= "https://unity.com/ja/download" target="_blank">https://unity.com/ja/download</a>
                             </p>
                             <div class="img">
-                                <img src="img/page1/unity_install.jpg">
+                                <a href="img/page1/unity_install.jpg" rel="lightbox"><img src="img/page1/unity_install.jpg"></a>
                             </div>
                         </div>
                         <div class="line-break"></div>
@@ -112,17 +114,17 @@
                         <div class="section-2 section1" id="section1-2">
                             <h3>02 Unityエディターのインストール</h3>
                             <p>
-                                以下のリンクから「2021」、「LTS」を選択し、「2021.3.16f1」を選択してください。
+                                以下のリンクから「2021」、「LTS」を選択し、「2021.3.16f1」をインストールしてください。
                                 <a href= "https://unity.com/ja/releases/editor/archive" target="_blank">https://unity.com/ja/releases/editor/archive</a>
                             </p>
                             <div class="img">
-                                <img src="img/page1/unityeditor_select.jpg">
+                                <a href="img/page1/unityeditor_select.jpg" rel="lightbox"><img src="img/page1/unityeditor_select.jpg"></a>
                             </div>
                             <p>
                                 installを押した後、「Unity Hub.appを開く」を押し、自身の環境に合致したエディターをインストールしてください。</br>
                             </p>
                             <div class="img">
-                                <img src="img/page1/unityeditor_install.jpg">
+                                <a href="img/page1/unityeditor_install.jpg" rel="lightbox"><img src="img/page1/unityeditor_install.jpg"></a>
                             </div>
                         </div>
                         <div class="line-break"></div>
@@ -133,7 +135,7 @@
                                 Unity Hubを開き、「Add」から「Add project from disk」を選択し、コンピュータ内の「MiracleHuman」フォルダを選択してください。</br>
                             </p>
                             <div class="img">
-                                <img src="img/page1/project_add.jpg">
+                                <a href="img/page1/project_add.jpg" rel="lightbox"><img src="img/page1/project_add.jpg"></a>
                             </div>
                         </div>
                         <div class="line-break"></div>
@@ -146,7 +148,7 @@
                                 選択した後、モーションを作成したいアンドロイドの種類を選択してください。</br>
                             </p>
                             <div class="img">
-                                <img src="img/page1/scenes_select.jpg">
+                                <a href="img/page1/scenes_select.jpg" rel="lightbox"><img src="img/page1/scenes_select.jpg"></a>
                             </div>
                         </div>
                         <div class="line-break"></div>
@@ -154,13 +156,21 @@
                         <div class="section-2 section1" id="section1-5">
                             <h3>05 Debug Settingsの追加</h3>
                             <p>
-                                以下のように「Debug Settings」の追加を行なってください。</br>
-                                追加場所は自由ですが、ここでは画面下に追加することを推奨しています。</br>
+                                メニューバーから「DebugMenu」→「Settings」を選択してください。</br>
+                                そうすると、新たに「Debug Settings」というウィンドウがポップアップされます。</br>
+                                その後、ポップアップされたウィンドウをドラッグ&ドロップで画面下にウィンドウを移動させてください。</br>
+                                移動場所は自由ですが、ここでは画面下に追加することを推奨しています。</br>
                             </p>
                             <div class="mov">
                                 <video src="mov/debugsettings_add.mov" muted controls></video>
                             </div>
                         </div>
+                        <script>
+                            lightbox.option({
+                            'alwaysShowNavOnTouchDevices': true,
+                            'disableScrolling': true,
+                            })
+                        </script>
                     </div>
                 </div>
             </div>
