@@ -112,7 +112,6 @@ body {
 .main-contents {
     width: 80%; 
     background-color: rgb(240, 240, 240);
-    overflow-y: auto;
     transition: width 0.3s ease; 
 }
 .side-menu {
@@ -327,7 +326,7 @@ body {
 .contents {
     justify-content: center;
     text-align: center;
-    height: 50vh;
+    height: 100% - clamp(30%, 30vh, 40%);
     padding-top: 2vh;
     padding-bottom: 4vh;
     background-color: rgb(70, 70, 70);
@@ -347,7 +346,7 @@ body {
 .contents .outline-block {
     display: flex;
     justify-content: center; 
-    gap: 2vw;       
+    gap: 2vw;
 }
 .contents .outline {
     display: flex;

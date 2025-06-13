@@ -146,20 +146,27 @@
                             <div class="line-break"></div>
                             <div class="section-3 section3-1-2" id="section3-1-2">
                                 <h4>02 作成方法</h3>
+                                <p>
+                                    既存の動作をコピーしてから<strong>動作部位</strong>を変更しても、期待通りに動きません。
+                                    <strong>動作部位</strong>を変更する場合は、画面中央上にある<strong>▶︎</strong>ボタンを押し、停止させてから再度同じボタンを押し、起動し直してください。</br>
+                                    <strong>Modify to the current position</strong>を押しても何も変化しません。
+                                </p>
+                                <div class="line-break"></div>
                                 <h5>Level1</h5>
                                 <p>
-                                    腕全体を使用したモーションの基礎となる作成方法です。
+                                    腕全体を使用したモーションの基礎となる作成方法です。</br>
+                                    左右の手を操作し、現在の位置から操作後の位置・角度まで動かします。
                                 </p>
                                 <div class="step">
                                     <p>
                                         1. Hierarchyウィンドウから<strong>HandMotions</strong>を選択し、Inspectorウィンドウをロックします。</br>
                                         2. 既存の動作をコピーし、<strong>名前ID</strong>を変更します。</br>
-                                        3. <strong>動作部位名</strong>に<strong>RightHandController</strong>もしくは<strong>LeftHandController</strong>を書き込みます。（<strong>_Joint</strong>と最後につくもの）。</br>
+                                        3. <strong>動作部位名</strong>に<strong>RightHandController</strong>もしくは<strong>LeftHandController</strong>を書き込みます。</br>
                                         4. <strong>動作部位</strong>の右端にある⦿ボタンを押し、3と同名のオブジェクトを選択します。</br>
                                         5. Motion Hand Data内の<strong>名前ID</strong>を変更します。</br>
                                         6. Debug Settingsの<strong>Motion Edit Mode On</strong>をクリックします。</br>
                                         7. Hierarchyウィンドウから<strong>RightHandController</strong>もしくは<strong>LeftHandController</strong>を選択し、</br>
-                                        &ensp;&thinsp;&thinsp; Scene画面から動かしたい位置・角度に動かします。</br>
+                                        &ensp;&thinsp;&thinsp; Scene画面上で動かしたい位置・角度に動かします。</br>
                                         8. 3で命名したID名に対応する<strong>Modify to the current position</strong>をクリックします。</br>
                                         9. Motion Hand Data内にある<strong>移動速度[m/s]</strong>もしくは<strong>移動時間[msec]</strong>と<strong>姿勢保持時間[msec]</strong>を調整します。</br>
                                         &ensp;&thinsp;&thinsp; その後、<strong>移動軌跡（座標）</strong>と<strong>回転軌跡（角度）</strong>の右にあるグラフを押し、お好みのグラフに変更します。</br>
@@ -182,6 +189,19 @@
                                 <div class="line-break"></div>
                                 <h5>Level3</h5>
                                 <p>
+                                    Level1を発展させ、指の動作も追加します。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. Motion Hand Data内から<strong>Finger Data</strong> → +ボタンと押します。</br>
+                                        2. 追加した要素を押し、<strong>動作部位名</strong>に動かしたい指を<strong>BodyBase_Joint</strong>から選び、書き込みます。</br>
+                                        &ensp;&thinsp;&thinsp; （<strong>_Joint</strong>と最後につくもの）。</br>
+                                        3. 最後に、manageの<strong>Save to file</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level4</h5>
+                                <p>
                                     Level2を発展させ、人間のように曲線を帯びた動作を作成します。
                                 </p>
                                 <div class="step">
@@ -193,19 +213,30 @@
                                     </p>
                                 </div>
                                 <div class="line-break"></div>
-                                <h5>Level4</h5>
+                                <h5>Level5</h5>
                                 <p>
                                     Level3を発展させ、腕の位置・角度を自由に調節します。
                                 </p>
                                 <div class="step">
                                     <p>
                                         1. Level1の通りに、動作を作成する。</br>
-                                        2. 調節したい動作のMotion Hand Data内にある<strong>IKにオフセットをかける</strong>の▶︎ボタンを押し、</br>
-                                        &ensp;&thinsp;&thinsp; 右下にある+ボタンを押し、追加します。</br>
-                                        3. 追加した要素の▶︎ボタンを押し、<strong>動作部位名</strong>に調整したい軸を<strong>BodyBase_Joint</strong>から選び、書き込みます。</br>
+                                        2. 調節したい動作のMotion Hand Data内から<strong>IKにオフセットをかける</strong> → +ボタンと押します。</br>
+                                        3. 追加した要素を押し、<strong>動作部位名</strong>に調整したい軸を<strong>BodyBase_Joint</strong>から選び、書き込みます。</br>
                                         &ensp;&thinsp;&thinsp; （<strong>_Joint</strong>と最後につくもの）。</br>
                                         4. <strong>相対角度</strong>を調整します。</br>
                                         5. 最後に、manageの<strong>Save to file</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level6</h5>
+                                <p>
+                                    作成した動作を左右反転にする。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. 1 ~ 5の通りに、動作を作成する。</br>
+                                        2. <strong>swap the all</strong>を押します。</br>
+                                        3. 最後に、manageの<strong>Save to file</strong>をクリックします。
                                     </p>
                                 </div>
                             </div>
@@ -228,6 +259,10 @@
                             <div class="line-break"></div>
                             <div class="section-3 section3-2-2" id="section3-2-2">
                                 <h4>02 作成方法</h3>
+                                <p>
+                                    既存の動作をコピーしてから<strong>動作部位</strong>を変更しても、期待通りに動きません。<strong>動作部位</strong>を変更する場合は、画面中央上にある<strong>▶︎</strong>ボタンを押し、停止させてから再度同じボタンを押し、起動し直してください。
+                                </p>
+                                <div class="line-break"></div>
                                 <h5>Level1</h5>
                                 <p>
                                     各軸でのモーションの基礎となる作成方法です。
@@ -242,7 +277,7 @@
                                         6. <strong>基礎姿勢からの相対角度[deg]</strong>を調整します。</br>
                                         7. <strong>回転時間[msec]</strong>と<strong>姿勢保持時間[msec]</strong>を調整します。</br>
                                         &ensp;&thinsp;&thinsp; その後、<strong>回転軌跡（角度）</strong>の右にあるグラフを押し、お好みのグラフに変更します。</br>
-                                        8. 最後に、manageの<strong>Save to file</strong>をクリックします。
+                                        8. 最後に、<strong>Save to file</strong>をクリックします。
                                     </p>
                                 </div>
                                 <div class="line-break"></div>
@@ -266,7 +301,7 @@
                             <h3>03 Facials</h3>
                             <div class="underline-headline-2"></div>
                             <p>
-                                ここに文字を書きます。
+                                ここでは、表情の制作と、それに必要なパラメータの説明を行います。
                             </p>
                             <div class="line-break"></div>
                             <div class="section-3 section3-3-1" id="section3-3-1">
@@ -279,8 +314,18 @@
                             <div class="section-3 section3-3-2" id="section3-3-2">
                                 <h4>02 作成方法</h3>
                                 <p>
-                                    ここに文字を書きます。
+                                    表情のモーションの基礎となる作成方法です。
                                 </p>
+                                <div class="step">
+                                    <p>
+                                        1. Hierarchyウィンドウから<strong>Facials</strong>を選択します。</br>
+                                        2. 既存の動作をコピーし、<strong>表情名</strong>を変更します。</br>
+                                        3. 次に、<strong>Base FACS</strong> → <strong>Action Unit</strong> → <strong>List</strong> → <strong>Element</strong>と押します。</br>
+                                        4. <strong>Key</strong>から動かしたい部位を選び、<strong>Value</strong>を押し、<strong>Value</strong>の値を変更します</br>
+                                        5. 最後に、<strong>Save to file</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
                             </div>
                             <div class="line-break"></div>
                         </div>
@@ -288,7 +333,8 @@
                             <h3>04 Actions</h3>
                             <div class="underline-headline-2"></div>
                             <p>
-                                ここに文字を書きます。
+                                ここでは、01 ~ 03で作成したモーションを組み合わせ、1つの動作を作成します。</br>
+                                また、それに必要なパラメータの説明を行います。
                             </p>
                             <div class="line-break"></div>
                             <div class="section-3 section3-4-1" id="section3-4-1">
@@ -301,8 +347,59 @@
                             <div class="section-3 section3-4-2" id="section3-4-2">
                                 <h4>02 作成方法</h3>
                                 <p>
-                                    ここに文字を書きます。
+                                    Actionsで動作を2つ作成し、それぞれA、Bと命名したとき、Aの動作内でBの動作を使用し、Bの動作内でAの動作を使用すると無限ループに陥ってしまい、動作が終了しなくなります。
+                                    Actionsで作成した動作を他のActionsの動作で使用する際は十分注意をして作成してください。
                                 </p>
+                                <div class="line-break"></div>
+                                <h5>Level1</h5>
+                                <p>
+                                    モーションを組み合わせる基礎的な手順です。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. Hierarchyウィンドウから<strong>Actions</strong>を選択します。</br>
+                                        2. 既存の動作をコピーし、<strong>名前ID</strong>を変更します。</br>
+                                        3. 次に、<strong>Action ID List</strong> → +ボタンと押します。</br>
+                                        4. 追加した要素から<strong>Action</strong>を押し、<strong>Action Type</strong>と<strong>Predefined Action</strong>を記入します。</br>
+                                        5. <strong>Startdelay</strong>と<strong>Speed Scale</strong>、<strong>Intensity</strong>を調整します。</br>
+                                        6. 最後に、<strong>Save</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level2</h5>
+                                <p>
+                                    Level1で作成した一連の動作全体を微調整します。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. 画面下の<strong>Speed Scale</strong>と<strong>Intensity</strong>を調整する</br>
+                                        2. <strong>Save</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level3</h5>
+                                <p>
+                                    Level1で作成した動作の直後に新たな動作をつなげる。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. <strong>Action ID List</strong> → <strong>Element</strong> → <strong>Next Actions</strong> → +ボタンと押します。</br>
+                                        2. Level1の4 ~ 6を繰り返し行います。</br>
+                                        3. 最後に<strong>Save</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level4</h5>
+                                <p>
+                                    Actionsで作成した動作をActionsの別の動作内で使用する。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. Level1を繰り返し、2つ以上の動作を作成する。</br>
+                                        2. Level1を繰り返し、<strong>Predefined Action</strong>にLevel4の1で作成した動作名を記入する。</br>
+                                        3. 最後に<strong>Save</strong>をクリックします。
+                                    </p>
+                                </div>
                             </div>
                             <div class="line-break"></div>
                         </div>
@@ -310,7 +407,7 @@
                             <h3>05 オブジェクトを利用したMotion</h3>
                             <div class="underline-headline-2"></div>
                             <p>
-                                ここに文字を書きます。
+                                この章では、オブジェクトの作り方や、それを用いたモーションの作成方法について見ていきます。
                             </p>
                             <div class="line-break"></div>
                             <div class="section-3 section3-5-1" id="section3-5-1">
@@ -323,8 +420,19 @@
                             <div class="section-3 section3-5-2" id="section3-5-2">
                                 <h4>02 オブジェクトの作成方法</h3>
                                 <p>
-                                    ここに文字を書きます。
+                                    batファイルを開く際は、ファイルをクリックすると実行してしまうので、エディタに直接ドラック&ドロップなどを行い開く必要があります。
+                                    また、batファイルのパラメータにあるx、y、zの座標系はUnity空間上と同じです。
                                 </p>
+                                <div class="line-break"></div>
+                                <div class="step">
+                                    <p>
+                                        1.<strong>エクスプローラー</strong>を開き、<strong>Miracle Human</strong> → <strong>Release</strong> → <strong>utils</strong>と押してください。</br>
+                                        2. Createから始まる.batファイルを好きに選択し、コピー&ペーストとファイル名の変更を行なってください。</br>
+                                        3. ペーストしたファイルをメモ帳やMeryなどの<strong>テキストエディタ</strong>もしくは<strong>コードエディタ</strong>で開いてください。</br>
+                                        4. <strong>id</strong>にオブジェクト名、<strong>scale</strong>に大きさ、<strong>position</strong>に座標、<strong>rotation</strong>に角度、<strong>color</strong>色を記入してください。</br>
+                                        5. 最後に保存をして終わりです。
+                                    </p>
+                                </div>
                             </div>
                             <div class="line-break"></div>
                             <div class="section-3 section3-5-3" id="section3-5-3">

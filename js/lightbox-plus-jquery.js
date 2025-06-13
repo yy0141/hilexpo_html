@@ -1940,7 +1940,7 @@ Expr = jQuery.expr = {
 		focus: function( elem ) {
 			return elem === safeActiveElement() &&
 				document.hasFocus() &&
-				!!( elem.type || elem.href || 〜elem.tabIndex );
+				!!( elem.type || elem.href || ~elem.tabIndex );
 		},
 
 		// Boolean properties
