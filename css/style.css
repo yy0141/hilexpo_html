@@ -438,7 +438,6 @@ body {
 }
 .main-topic h5 {
     padding-left: 3.5vw;
-    padding-bottom: 1vh;
     font-size: 1.4vw;
     font-weight: 600;
     color: rgb(50, 50, 50);
@@ -500,9 +499,14 @@ body {
     height: 3vh;
 }
 
-.step {
-    padding-top: 3vh;
+.main-topic .step {
+    padding-top: 1.5vh;
     padding-left: 3vw;
+}
+.main-topic .step p {
+    font-size: 1.2vw;
+    line-height: 200%;
+    color: rgb(75, 75, 75);
 }
 
 .maintable {

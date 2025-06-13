@@ -126,7 +126,7 @@
                         <h2>03 モーションの制作方法</h2>
                         <div class="underline-headline-1"></div>
                         <p>
-                            ここに文字を書きます。
+                            この章では、モーションの制作方法をLevelに分けて説明していきます。</br>
                         </p>
                         <div class="line-break"></div>
 
@@ -134,7 +134,7 @@
                             <h3>01 HandMotions</h3>
                             <div class="underline-headline-2"></div>
                             <p>
-                                ここに文字を書きます。
+                                ここでは、左右の腕の動作の作成と、それに必要なパラメータの説明を行います。
                             </p>
                             <div class="line-break"></div>
                             <div class="section-3 section3-1-1" id="section3-1-1">
@@ -146,15 +146,66 @@
                             <div class="line-break"></div>
                             <div class="section-3 section3-1-2" id="section3-1-2">
                                 <h4>02 作成方法</h3>
+                                <h5>Level1</h5>
                                 <p>
-                                    両手のモーションの作成は以下の手順の通りに操作を行います。
+                                    腕全体を使用したモーションの基礎となる作成方法です。
                                 </p>
                                 <div class="step">
                                     <p>
-                                        1. Hierarchyウィンドウから「Motions」内の「HandMotions」を選択し、ウィンドウをロックする</br>
-                                        2. 既存の動作をコピーし、名前ID（動作名）を変更する</br>
-                                        3. Motion Hand Data内の名前IDを変更する</br>
-                                        4. 
+                                        1. Hierarchyウィンドウから<strong>HandMotions</strong>を選択し、Inspectorウィンドウをロックします。</br>
+                                        2. 既存の動作をコピーし、<strong>名前ID</strong>を変更します。</br>
+                                        3. <strong>動作部位名</strong>に<strong>RightHandController</strong>もしくは<strong>LeftHandController</strong>を書き込みます。（<strong>_Joint</strong>と最後につくもの）。</br>
+                                        4. <strong>動作部位</strong>の右端にある⦿ボタンを押し、3と同名のオブジェクトを選択します。</br>
+                                        5. Motion Hand Data内の<strong>名前ID</strong>を変更します。</br>
+                                        6. Debug Settingsの<strong>Motion Edit Mode On</strong>をクリックします。</br>
+                                        7. Hierarchyウィンドウから<strong>RightHandController</strong>もしくは<strong>LeftHandController</strong>を選択し、</br>
+                                        &ensp;&thinsp;&thinsp; Scene画面から動かしたい位置・角度に動かします。</br>
+                                        8. 3で命名したID名に対応する<strong>Modify to the current position</strong>をクリックします。</br>
+                                        9. Motion Hand Data内にある<strong>移動速度[m/s]</strong>もしくは<strong>移動時間[msec]</strong>と<strong>姿勢保持時間[msec]</strong>を調整します。</br>
+                                        &ensp;&thinsp;&thinsp; その後、<strong>移動軌跡（座標）</strong>と<strong>回転軌跡（角度）</strong>の右にあるグラフを押し、お好みのグラフに変更します。</br>
+                                        10. 最後に、manageの<strong>Save to file</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level2</h5>
+                                <p>
+                                    Level1を発展させ、より複雑な動きを作成します。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. Motion Hand Dataの右下にある+ボタンを押し、追加を行います。</br>
+                                        2. Motion Hand Data内の<strong>名前ID</strong>を変更します。</br>
+                                        3. Level1の5 ~ 10を繰り返し行います。</br>
+                                        4. Level2の1 ~ 3を繰り返し行い、モーションの作成を行います。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level3</h5>
+                                <p>
+                                    Level2を発展させ、人間のように曲線を帯びた動作を作成します。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. Level2の通りに、Motion Hand Dataに3つ以上の動作を作成します。</br>
+                                        2. 最初と最後以外の動作の、Motion Hand Data内にある<strong>ベジェ曲線の中間点</strong>にチェックします。</br>
+                                        3. 2で操作した動作に対応する<strong>Modify to the current position</strong>をクリックします。</br>
+                                        4. 最後に、manageの<strong>Save to file</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level4</h5>
+                                <p>
+                                    Level3を発展させ、腕の位置・角度を自由に調節します。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. Level1の通りに、動作を作成する。</br>
+                                        2. 調節したい動作のMotion Hand Data内にある<strong>IKにオフセットをかける</strong>の▶︎ボタンを押し、</br>
+                                        &ensp;&thinsp;&thinsp; 右下にある+ボタンを押し、追加します。</br>
+                                        3. 追加した要素の▶︎ボタンを押し、<strong>動作部位名</strong>に調整したい軸を<strong>BodyBase_Joint</strong>から選び、書き込みます。</br>
+                                        &ensp;&thinsp;&thinsp; （<strong>_Joint</strong>と最後につくもの）。</br>
+                                        4. <strong>相対角度</strong>を調整します。</br>
+                                        5. 最後に、manageの<strong>Save to file</strong>をクリックします。
                                     </p>
                                 </div>
                             </div>
@@ -165,7 +216,7 @@
                             <h3>02 AngleMotions</h3>
                             <div class="underline-headline-2"></div>
                             <p>
-                                ここに文字を書きます。
+                                ここでは、各軸ごとのモーション制作と、それに必要なパラメータの説明を行います。
                             </p>
                             <div class="line-break"></div>
                             <div class="section-3 section3-2-1" id="section3-2-1">
@@ -177,15 +228,42 @@
                             <div class="line-break"></div>
                             <div class="section-3 section3-2-2" id="section3-2-2">
                                 <h4>02 作成方法</h3>
+                                <h5>Level1</h5>
                                 <p>
-                                    ここに文字を書きます。
+                                    各軸でのモーションの基礎となる作成方法です。
                                 </p>
+                                <div class="step">
+                                    <p>
+                                        1. Hierarchyウィンドウから<strong>AngleMotions</strong>を選択し、Inspectorウィンドウをロックします。</br>
+                                        2. 既存の動作をコピーし、<strong>名前ID</strong>を変更します。</br>
+                                        3. Angle Data内の<strong>名前ID</strong>を変更します。</br>
+                                        4. <strong>動作部位名</strong>に動かしたい軸を<strong>BodyBase_Joint</strong>から選び、書き込みます。（<strong>_Joint</strong>と最後につくもの）。</br>
+                                        5. <strong>動作部位</strong>の右端にある⦿ボタンを押し、3と同名のオブジェクトを選択します。</br>
+                                        6. <strong>基礎姿勢からの相対角度[deg]</strong>を調整します。</br>
+                                        7. <strong>回転時間[msec]</strong>と<strong>姿勢保持時間[msec]</strong>を調整します。</br>
+                                        &ensp;&thinsp;&thinsp; その後、<strong>回転軌跡（角度）</strong>の右にあるグラフを押し、お好みのグラフに変更します。</br>
+                                        8. 最後に、manageの<strong>Save to file</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                                <h5>Level2</h5>
+                                <p>
+                                    Level1を発展させ、より複雑な動きを作成します。
+                                </p>
+                                <div class="step">
+                                    <p>
+                                        1. Motion Hand Dataの右下にある+ボタンを押し、追加を行います。</br>
+                                        2. Motion Hand Data内の<strong>名前ID</strong>を変更します。</br>
+                                        3. Level1の3 ~ 8を繰り返し行います。</br>
+                                        4. Level2の1 ~ 3を繰り返し行い、モーションの作成を行います。
+                                    </p>
+                                </div>
                             </div>
                             <div class="line-break"></div>
                         </div>
                         
                         <div class="section-2 section3-3" id="section3-3">
-                            <h3>03 Facial</h3>
+                            <h3>03 Facials</h3>
                             <div class="underline-headline-2"></div>
                             <p>
                                 ここに文字を書きます。
