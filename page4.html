@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0から始めるアンドロイドのモーション制作</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/lightbox.css">
@@ -22,9 +23,6 @@
             </div>
         </div>
         <div class="auther">
-            <a href="https://www.kindai.ac.jp/informatics/" target="_blank" class="logo">
-                <img src="img/kdix_logo.png" alt="KDIX">
-            </a>
             <div class="text">
                 <p class="name">久保, 藤木, 安井, 山本</p>
                 <p class="date">2025.00.00に更新</p>
@@ -55,23 +53,23 @@
                     <div class="underline-menu"></div>
                 </div>                  
                 <div class="menu-link">
-                    <a href="index.html">00 ホーム</a>
-                    <a href="page1.html">01 環境構築</a>
-                    <a href="page2.html">02 Miracle Human</a>
-                    <a href="page3.html">03 モーションの作成方法</a>
+                    <a href="index.html">00. ホーム</a>
+                    <a href="page1.html">01. 環境構築</a>
+                    <a href="page2.html">02. Miracle Human</a>
+                    <a href="page3.html">03. モーションの作成方法</a>
                 </div>     
                 <div class="accordion">
-                    <button class="accordion-button-1">04 事例紹介</button>
+                    <button class="accordion-button-1">
+                        04. チュートリアル
+                    </button>
                     <div class="accordion-panel-1">
-                      <a href="#section4-1">01 プロローグ</a>
-                      <a href="#section4-2">02 Room1</a>
-                      <a href="#section4-3">03 Room3</a>
-                      <a href="#section4-4">04 Soseki</a>
-                      <a href="#section4-5">05 Cafe</a>
-                      <a href="#section4-6">06 TV</a>
-                      <a href="#section4-7">07 Piano</a>
-                      <a href="#section4-8">08 Dance</a>
+                      <a href="#section4-1">01. 頭・目・体の角度を決めよう</a>
+                      <a href="#section4-2">02. 両手の動作を作成しよう</a>
+                      <a href="#section4-3">03. 表情を作成しよう</a>
                     </div>
+                </div>
+                <div class="menu-link">
+                    <a href="page5.html">05. 事例紹介</a>
                 </div>
             </div> 
             <script>
@@ -88,58 +86,118 @@
             <div class="main-topic">
                 <div class="main-topic-block">
                     <div class="section-1 section4" id="section4">
-                        <h2>04 事例紹介</h2>
+                        <h2>04. チュートリアル</h2>
                         <div class="underline-headline-1"></div>
                         <p>
-                            ここに文字を書きます。
+                            これまでの内容をもとに「考え中の動作」を作ってみよう。分からない・ヒントが欲しいと思った時は、</br>
+                            ヒントを開き、回答が見たい場合は解説を開いてください。
                         </p>
+                        <div class="mov">
+                            <video src="mov/tutorial_answer_cropped.mp4" muted controls loop autoplay></video>
+                        </div>
+                        <div class="line-break"></div>
+
                         <div class="section-2 section4-1" id="section4-1">
-                            <h3>01 プロローグ</h3>
+                            <h3>01. 頭・目・体の角度を決めよう</h3>
                             <p>
-                                ここに文字を書きます。
+                                以下の項目に従い、動作のベースとなる頭・目・体の位置・角度を決めよう。</br> 
                             </p>
+                            <div class="step">
+                                <p>
+                                    1. <strong>Actions</strong>で<strong>HeadController</strong>を操作し、頭部を左下に傾けましょう。</br>
+                                    2. <strong>Actions</strong>で<strong>EyeController</strong>を操作し、左下を見るようにしましょう。</br>
+                                    3. <strong>AngleMotions</strong>で<strong>Head_Joint</strong>を操作し、頭部を右に傾げましょう。</br>
+                                    4. <strong>AngleMotions</strong>で<strong>Spine_Joint</strong>を操作し、体を正面に傾けましょう。</br>
+                                    5. <strong>Actions</strong>で1 ~ 4を組み合わせましょう</br>
+                                </p>
+                            </div>
+                            <h4>ヒント</h4>
+                            <details class="details">
+                                <summary class="details-summary">ActionsでHeadController・EyeControllerを操作するには？</summary>
+                                <p class="details-content">
+                                    ActionsでControllerを使用するには、Action Typeに<span style="color: red;">controller</span>、This Cmdに<span style="color: red;">コマンド</span>を記入する必要があります。
+                                    コマンドは<strong>オブジェクトを利用したMotion</strong>の<strong>Actionsで使用するコマンド</strong>をご参照ください。
+                                </p>
+                            </details>
+                            <details class="details">
+                                <summary class="details-summary">姿勢を維持したいとき</summary>
+                                <p class="details-content">
+                                    AngleMotionsで作成した動作を維持するには以下のどちらかの方法を取る必要があります。
+                                    1の場合、姿勢の維持時間を変更する度にKeep Timeを変更する必要がなくなりますが、DefaultPoseで元の姿勢に戻らないため、元の姿勢に戻る専用のモーションを作成する必要があります。
+                                    2の場合は、この逆となります。どちらでも正解ですので好きな方法を採用してください。</br>
+                                    1. <strong>Keep Until New Element Addition</strong>を使用する。</br>
+                                    2. <strong>Keep Time</strong>を長めに取る。</br>
+                                </p>
+                            </details>
+                            <h4>解説</h4>
+                            <div class="video-row">
+                                <video src="mov/tutorial_howto_controller.mp4" muted controls></video>
+                                <video src="mov/tutorial_howto_angle.mp4" muted controls></video>
+                            </div>
                         </div>
+                        <div class="line-break"></div>
+
                         <div class="section-2 section4-2" id="section4-2">
-                            <h3>02 Room1</h3>
+                            <h3>02. 両手の動作を作成しよう</h3>
                             <p>
-                                ここに文字を書きます。
+                                まずは右手の動作を作成し、その位置をもとに左手の動作を作成しましょう。</br>
+                                右手はグーの形で顎に当たらない程度まで寄せます。
                             </p>
+                            <div class="step">
+                                <p>
+                                    1. <strong>HandMotions</strong>で<strong>RightHandController</strong>を操作し、右手の位置を決めましょう。</br>
+                                    2. <strong>HandMotions</strong>で<strong>LeftHandController</strong>を操作し、左手の位置を決めましょう。</br>
+                                    3. <strong>Actions</strong>で1 ~ 2を組み合わせましょう</br>
+                                </p>
+                            </div>
+                            <h4>ヒント</h4>
+                            <details class="details">
+                                <summary class="details-summary">右手が顎に当たらないようにするには？</summary>
+                                <p class="details-content">
+                                    右手は顎に当たらない程度まで寄せたいため、<strong>Motion Toward Object</strong>をHeadに変更しましょう。
+                                </p>
+                            </details>
+                            <details class="details">
+                                <summary class="details-summary">右手の指を閉じるには？</summary>
+                                <p class="details-content">
+                                    右指を閉じるには<strong>Finger Data</strong>にRightThumb_Joint・RightIndexFinger_Joint
+                                    ・RightMiddleFinger_Joint・RightRingFinger_Joint・RightPinkyFinger_Jointを追加し、<strong>Target Angle</strong>を調整する必要があります。
+                                </p>
+                            </details>
+                            <details class="details">
+                                <summary class="details-summary">左右の手がぶつかってしまう場合は？</summary>
+                                <p class="details-content">
+                                    左右の手がぶつかる場合は<strong>Actions</strong>の<strong>Startdelay</strong>と<strong>Speed Scale</strong>
+                                    を調節し、右手が先に動き、その後に左手が動くように調整する必要があります。
+                                </p>
+                            </details>
+                            <h4>解説</h4>
+                            <div class="mov">
+                                <video src="mov/tutorial_howto_hand.mp4" muted controls></video>
+                            </div>
                         </div>
+                        <div class="line-break"></div>
+
                         <div class="section-2 section4-3" id="section4-3">
-                            <h3>03 Room3</h3>
-                            <p>
-                                ここに文字を書きます。
-                            </p>
-                        </div>
-                        <div class="section-2 section4-4" id="section4-4">
-                            <h3>04 Soseki</h3>
-                            <p>
-                                ここに文字を書きます。
-                            </p>
-                        </div>
-                        <div class="section-2 section4-5" id="section4-5">
-                            <h3>05 cafe</h3>
-                            <p>
-                                ここに文字を書きます。
-                            </p>
-                        </div>
-                        <div class="section-2 section4-6" id="section4-6">
-                            <h3>06 TV</h3>
-                            <p>
-                                ここに文字を書きます。
-                            </p>
-                        </div>
-                        <div class="section-2 section4-7" id="section4-7">
-                            <h3>07 Piano</h3>
-                            <p>
-                                ここに文字を書きます。
-                            </p>
-                        </div>
-                        <div class="section-2 section4-8" id="section4-8">
-                            <h3>08 Dance</h3>
-                            <p>
-                                ここに文字を書きます。
-                            </p>
+                            <h3>03. 表情を作成しよう</h3>
+                            <div class="step">
+                                <p>
+                                    1. <strong>Facials</strong>を使い、表情を作成しましょう。</br>
+                                    2. <strong>Actions</strong>で1を組み合わせましょう</br>
+                                </p>
+                            </div>
+                            <h4>ヒント</h4>
+                            <details class="details">
+                                <summary class="details-summary">実機のアンドロイドが下を向くと目を閉じてしまう場合は？</summary>
+                                <p class="details-content">
+                                    実機は下を向くと目を閉じていってしまうので、<strong>Facials</strong>で
+                                    Upper Lid_Right・Upper Lid_Rightを操作し、目を見開いた状態にする必要があります。
+                                </p>
+                            </details>
+                            <h4>解説</h4>
+                            <div class="mov">
+                                <video src="mov/tutorial_howto_face.mp4" muted controls></video>
+                            </div>
                         </div>
                         <script>
                             lightbox.option({
@@ -147,6 +205,7 @@
                             'disableScrolling': true,
                             })
                         </script>
+                        </div>
                     </div>
                 </div>
             </div>

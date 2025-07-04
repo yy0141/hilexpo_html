@@ -1,0 +1,15 @@
+[
+    {"Color": 1, "パラメータ名": "id", "説明": "動かしたいオブジェクト名"},
+    {"Color": 1, "パラメータ名": "motionTowardObject", "説明": "動きの対象とするオブジェクト名"},
+    {"Color": 0, "パラメータ名": "targetMotionMode", "説明": "座標系の種類（0 ~ 2）"},
+    {"Color": 0, "パラメータ名": "tracking", "説明": "トラッキングを行うかの可否"},
+    {"Color": 1, "パラメータ名": "targetPoint", "説明": "移動させる座標"},
+    {"Color": 1, "パラメータ名": "translateTime", "説明": "移動時間（msec）"},
+    {"Color": 1, "パラメータ名": "targetRotation", "説明": "回転角度"},
+    {"Color": 0, "パラメータ名": "rotateSpeed", "説明": "回転スピード（deg/s）"},
+    {"Color": 0, "パラメータ名": "rotateTime", "説明": "回転時間（msec）"},
+    {"Color": 1, "パラメータ名": "keepTime", "説明": "姿勢保持時間（msec）"},
+    {"Color": 0, "パラメータ名": "mode", "説明": "移動軌跡（0 ~ 1）"},
+    {"Color": 0, "パラメータ名": "gazeTracking", "説明": "次に再生するモーション群のリスト"},
+    {"Color": 0, "パラメータ名": "priority", "説明": "優先度"}
+]

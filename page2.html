@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0から始めるアンドロイドのモーション制作</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/lightbox.css">
@@ -22,9 +23,6 @@
             </div>
         </div>
         <div class="auther">
-            <a href="https://www.kindai.ac.jp/informatics/" target="_blank" class="logo">
-                <img src="img/kdix_logo.png" alt="KDIX">
-            </a>
             <div class="text">
                 <p class="name">久保, 藤木, 安井, 山本</p>
                 <p class="date">2025.00.00に更新</p>
@@ -55,23 +53,23 @@
                     <div class="underline-menu"></div>
                 </div>                  
                 <div class="menu-link">
-                    <a href="index.html">00 ホーム</a>
-                    <a href="page1.html">01 環境構築</a>
+                    <a href="index.html">00. ホーム</a>
+                    <a href="page1.html">01. 環境構築</a>
                 </div>     
                 <div class="accordion">
                     <button class="accordion-button-1">
-                        02 Miracle Human</br>
-                        
+                        02. Miracle Human
                     </button>
                     <div class="accordion-panel-1">
-                      <a href="#section2-1">01 Miracle Humanとは</a>
-                      <a href="#section2-2">02 Spring Manの構成</a>
-                      <a href="#section2-3">03 操作方法</a>
+                      <a href="#section2-1">01. Miracle Humanとは</a>
+                      <a href="#section2-2">02. Spring Manの構成</a>
+                      <a href="#section2-3">03. 操作方法</a>
                     </div>
                 </div>
                 <div class="menu-link">
-                    <a href="page3.html">03 モーションの作成方法</a>
-                    <a href="page4.html">04 事例紹介</a>
+                    <a href="page3.html">03. モーションの作成方法</a>
+                    <a href="page4.html">04. チュートリアル</a>
+                    <a href="page5.html">05. 事例紹介</a>
                 </div>
             </div> 
             <script>
@@ -88,7 +86,7 @@
             <div class="main-topic">
                 <div class="main-topic-block">
                     <div class="section-1 section2" id="section2">
-                        <h2>02 Miracle Human</h2>
+                        <h2>02. Miracle Human</h2>
                         <div class="underline-headline-1"></div>
                         <p>
                             ここに文字を書きます。
@@ -96,7 +94,7 @@
                         <div class="line-break"></div>
 
                         <div class="section-2 section2-1" id="section2-1">
-                            <h3>01 Miracle Humanとは</h3>
+                            <h3>01. Miracle Humanとは</h3>
                             <p>
                                 Miracle Humanとはアンドロイドのモーション制作を行うためのツールであり、これを使用することでノーコードでの開発が可能になります。
                                 Unityを使用しているため、Unity初心者の方は最初に少しつまずくかもしれません。なので、この章をじっくり読み、理解をされてから次に進むことを推奨しています。</br>
@@ -106,7 +104,7 @@
                         <div class="line-break"></div>
 
                         <div class="section-2 section2-2" id="section2-2">
-                            <h3>02 オブジェクトの構成</h3>
+                            <h3>02. オブジェクトの構成</h3>
                             <p>
                                 オブジェクトの中で重要になるのは<strong>Object</strong>と<strong>SpringMan</strong>です。
                                 特に、<strong>SpringMan</strong>はモーションを制作する上で必ず使用するものであり、ここに含まれるオブジェクトを理解することが重要となってきます。
@@ -115,27 +113,30 @@
                                 <a href="img/page2/hierarchy__all.jpg" rel="lightbox"><img src="img/page2/hierarchy__all.jpg"></a>
                             </div></br>
                             <p>
-                                SpringManは以下のように構成されており、枠内のオブジェクトを中心に使用していきます。</br>
+                                SpringManは以下のように構成されており、以下のオブジェクトを中心に使用していきます。</br>
                                 <strong>Actions</strong>、<strong>Motions</strong>、<strong>Facials</strong>はモーションを制作するために使用し、
                                 <strong>BodyController</strong>、<strong>HeadController</strong>、<strong>EyeController</strong>、<strong>LeftHandController</strong>、<strong>RightHandController</strong>は各部位の制御として使用します。
-                                また、<strong>BodyBase_Joint</strong>には50以上にのアンドロイドの各軸が含まれており、これらを制御することでさまざまな動作を作成することができます。
+                                また、<strong>BodyBase_Joint</strong>には50以上のアンドロイドの各軸が含まれており、これらを制御することでさまざまな動作を作成することができます。
                             </p>
                             <div class="img">
                                 <a href="img/page2/hierarchy_springman.jpg" rel="lightbox"><img src="img/page2/hierarchy_springman.jpg"></a>
                             </div></br>
                             <p>
-                                BodyBase_Jointに含まれているオブジェクトについては以下の表をご確認ください。
+                                Motionsにはモーションを作成するオブジェクトが含まれており、HandMotions、AngleMotionsをしようしていきます。
+                                それ以外はしようしませんので、気にしなくて結構です。
+                            </p>
+                            <div class="img">
+                                <a href="img/page2/motions.jpg" rel="lightbox"><img src="img/page2/motions.jpg"></a>
+                            </div></br>
+
+                            <p>
+                                アンドロイドを構成する主要なオブジェクトについては以下の表をご確認ください。
                             </p>
                             <div class="maintable" id ='maintable'></div>
                             <script>
-                                let request = new XMLHttpRequest();
-
-                                request.open('GET', 'table/n1l.json');
-                                request.send();
-
-                                request.onreadystatechange = () => {
-                                    if (request.readyState == 4 && request.status == 200) {
-                                        let json = JSON.parse(request.responseText);
+                                fetch('table/n1l.json') // リクエストを送信
+                                    .then((response) => response.json())
+                                    .then((json) => {
                                         delete json[0].Number;
                                         var table = document.createElement('table');
                                         var tr = document.createElement('tr');
@@ -152,34 +153,30 @@
                                             for (key in json[0]) {
                                                 delete key.Number;
                                                 var td = document.createElement('td');
-                                                td.textContent = json[i][key];
+                                                td.innerHTML = json[i][key];
                                                 tr.appendChild(td);
                                             }
                                             table.appendChild(tr);
                                         }
 
                                         document.getElementById('maintable').appendChild(table);
-                                    }
-                                }
+                                });
                             </script>
                         </div>
                         <div class="line-break"></div>
                         
                         <div class="section-2 section2-3" id="section2-3">
-                            <h3>03 操作方法</h3>
+                            <h3>03. 操作方法</h3>
                             <div class="section-2 section2-3-1" id="section2-3-1">
                                 <h4>Game</h4>
-                                <div class="img">
-                                    <a href="img/page2/game.jpg" rel="lightbox"><img src="img/page2/game.jpg"></a>
-                                </div>
                                 <p>
                                     ボタンを押すことで各ウィンドウを展開することが可能です。</br>
                                     今回は使用頻度が多いMotion・Faceウィンドウについて見てみましょう。</br>
                                     <span style="color: red;">※Parameters・Axisウィンドウはほとんど使用しません。</span></br>
                                 </p>
                                 <div class="img">
-                                    <a href="img/page2/window_open.jpg" rel="lightbox"><img src="img/page2/window_open.jpg"></a>
-                                </div>
+                                    <a href="img/page2/game.jpg" rel="lightbox"><img src="img/page2/game.jpg"></a>
+                                </div></br></br>
                                 <p>
                                     <span style="color: red;">
                                         ※DefaultPoseは各Motionと各Controllerのみが初期位置に戻ります。Facialsは初期状態に戻りません。</br>
@@ -187,6 +184,9 @@
                                         &ensp; その部位は初期位置に戻らなくなります。
                                     </span>
                                 </p>
+                                <div class="img">
+                                    <a href="img/page2/window_open.jpg" rel="lightbox"><img src="img/page2/window_open.jpg"></a>
+                                </div>
                                 <div class="line-break"></div>
 
                                 <h4>Scene</h4>

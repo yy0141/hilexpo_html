@@ -1,0 +1,15 @@
+[
+    {"Number": 1, "パラメータ名": "id", "記入内容": "BodyController・HeadController・EyeControllerから選択"},
+    {"Number": 2, "パラメータ名": "motionTowardObject", "記入内容": "動きの対象とするオブジェクト名"},
+    {"Number": 3, "パラメータ名": "targetMotionMode", "記入内容": "0: オブジェクト座標からZ+軸にした座標、<br>1: アンドロイド座標からZ+軸にした座標、<br>2: オブジェクト座標"},
+    {"Number": 4, "パラメータ名": "tracking", "記入内容": "トラッキングを行うかの可否"},
+    {"Number": 5, "パラメータ名": "targetPoint", "記入内容": "移動させる座標"},
+    {"Number": 6, "パラメータ名": "translateTime", "記入内容": "移動時間（msec）"},
+    {"Number": 7, "パラメータ名": "targetRotation", "記入内容": "回転角度"},
+    {"Number": 8, "パラメータ名": "rotateSpeed", "記入内容": "回転スピード（deg/s）"},
+    {"Number": 9, "パラメータ名": "rotateTime", "記入内容": "回転時間（msec）"},
+    {"Number": 10, "パラメータ名": "keepTime", "記入内容": "姿勢保持時間（msec）"},
+    {"Number": 11, "パラメータ名": "mode", "記入内容": "0: Lerp、1: Slerp、default: Slerp"},
+    {"Number": 12, "パラメータ名": "gazeTracking", "記入内容": "可否"},
+    {"Number": 13, "パラメータ名": "priority", "記入内容": "優先度"}
+]

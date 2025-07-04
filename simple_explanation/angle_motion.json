@@ -1,0 +1,22 @@
+[
+    {"Color": 1, "パラメータ名": "id", "説明": "モーション名（英語）"},
+    {"Color": 0, "パラメータ名": "Priority", "説明": "トラッキングを行う強度"},
+    {"Color": 1, "パラメータ名": "Motion Part Name", "説明": "動作部位（名前）"},
+    {"Color": 1, "パラメータ名": "Motion Part", "説明": "動作部位（オブジェクト）"},
+    {"Color": 0, "パラメータ名": "Gaze Tracking", "説明": ""},
+    {"Color": 0, "パラメータ名": "Is Gesture", "説明": ""},
+    {"Color": 0, "パラメータ名": "Permit Emotional Roll Change", "説明": ""},
+    {"Color": 0, "パラメータ名": "Auto Beat", "説明": ""},
+    {"Color": 0, "パラメータ名": "Auto Beat After Motion", "説明": ""},
+    {"Color": 0, "パラメータ名": "Relaxing End Effector", "説明": "最後に脱力を行うかの可否"},
+    {"Color": 0, "パラメータ名": "None Direction", "説明": ""},
+    {"Color": 0, "パラメータ名": "Body Tracker", "説明": ""},
+    {"Color": 0, "パラメータ名": "Stiffness Controller", "説明": ""},
+    {"Color": 0, "パラメータ名": "Beat Motion", "説明": ""},
+    {"Color": 0, "パラメータ名": "Controller Obj", "説明": ""},
+    {"Color": 1, "パラメータ名": "Angle Data", "説明": "軸の角度を構成するリスト"},
+    {"Color": 0, "パラメータ名": "Remove the last target", "説明": ""},
+    {"Color": 1, "パラメータ名": "Start", "説明": "モーションを再生する"},
+    {"Color": 1, "パラメータ名": "Stop", "説明": "モーションを停止する"},
+    {"Color": 1, "パラメータ名": "Save to file", "説明": "モーションを保存する"}
+]

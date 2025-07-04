@@ -1,0 +1,10 @@
+[
+    {"Color": 1, "パラメータ名": "id", "説明": "モーション名（英語）"},
+    {"Color": 1, "パラメータ名": "Target Rotation", "説明": "defaultの姿勢からの相対角度"},
+    {"Color": 0, "パラメータ名": "Stiffness", "説明": "バネの強さ"},
+    {"Color": 1, "パラメータ名": "Rotate Time", "説明": "回転時間（msec）"},
+    {"Color": 1, "パラメータ名": "Rotate Curve", "説明": "回転軌跡（角度）"},
+    {"Color": 1, "パラメータ名": "Keep Time", "説明": " 姿勢保持時間（msec）"},
+    {"Color": 1, "パラメータ名": "Keep Until New Element Addition", "説明": "次の動作指令が来るまで姿勢保持時間を無視して待機するかの可否"},
+    {"Color": 0, "パラメータ名": "Target Rotation Offset", "説明": ""}
+]

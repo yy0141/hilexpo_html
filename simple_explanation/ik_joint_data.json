@@ -1,0 +1,7 @@
+[
+    {"Color": 1, "パラメータ名": "Motion Part Name", "説明": "動作部位（名前）"},
+    {"Color": 1, "パラメータ名": "Target Angle", "説明": "現在の角度からの相対的な角度"},
+    {"Color": 0, "パラメータ名": "Translate Time", "説明": "使用しない"},
+    {"Color": 0, "パラメータ名": "Translate Speed", "説明": "使用しない"},
+    {"Color": 0, "パラメータ名": "Translate Curve", "説明": "使用しない"}
+]
