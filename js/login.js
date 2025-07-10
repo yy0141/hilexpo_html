@@ -31,12 +31,7 @@ function showOrHide() {//パスワードを表示するか隠すかを判断す�
     }
   
     if (found) {/*foundがtrueの場合にcontainer2の要素(<p>)を上書きする。*/
-      alert(`こんにちは。${username}さん。`);
-      console.log(`logined is ${username}`);
-      document.getElementById("user").textContent = "ユーザー名:"+loginuser.name;
-      document.getElementById("age").textContent = "年齢:"+loginuser.age;
-      document.getElementById("email").textContent = "Eメール:"+loginuser.email;
-      document.getElementById("password2").textContent = "パスワード:"+loginuser.password;
+      window.location.href = 'page0.html'; // 通常の遷移
     } else {
         alert("ログインに失敗しました。入力している内容がデータと一致しませんでした。間違いがない場合は、ユーザーデータが破損している可能性があります。入力内容に誤りのない場合は、javascriptファイルのuserdata変数を確認してください。\nEnglish...Login failed. Data in the user data variable may be corrupted or entered incorrectly. If there are no typos in what you entered, please check the userdata variable in javascript.");
         console.log("Login failed. Data in the user data variable may be corrupted or entered incorrectly. If there are no typos in what you entered, please check the userdata variable in javascript.");
