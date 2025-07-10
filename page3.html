@@ -232,7 +232,7 @@
                                 </div>
                                 <div class="line-break"></div>
 
-                                <div class="tips" style="width: 80%;">
+                                <div class="tips" style="width: 85%;">
                                     <div class="tips-outline">
                                         <div class="tips-title">Tips</div>
                                         <p class="tips-text">
@@ -312,6 +312,35 @@
 
                                 <div class="section-3 section3-1-3" id="section3-1-3">
                                     <h4>03. モーション制作のコツ</h3>
+                                    <h5>【★★★】ベジェ曲線の利用</h5>
+                                    <div class="step">
+                                        <p>
+                                            ベジェ曲線を使用することで丸みを帯びた動作を作ることができ、人間らしさが出る様になる。</br>
+                                            以下の様に、id名を1、2、3と名付け、2の<strong>Is Bezier Curve Point</strong>をオンにすると以下の画像のように曲線の移動が可能になります。
+                                            ベジェ曲線は連続で何個も使用可能であり、より複雑な曲線移動も可能になっています。
+                                        </p>
+                                        <div class="img">
+                                            <a href="img/page3/bezier.jpg" rel="lightbox"><img src="img/page3/bezier.jpg" style="width: 30%;"></a>
+                                        </div>
+                                    </div>
+                                    <div class="line-break"></div>
+
+                                    <h5>【★★☆】IKオフセットの利用</h5>
+                                    <div class="step">
+                                        <p>
+                                            IKオフセットを使用することで、HandMotionsで作成したモーションにおいて、手の位置をそのままにし、それ以外の腕の各軸の角度を調整することができます。
+                                            例えば、右手で心臓を触る動作を作ると脇が開いてしまうため、IKオフセットで<strong>RightScapula_Joint</strong>を使用し、<strong>Target Angle</strong>を調整することで脇を多少締めることができます。
+                                        </p>
+                                    </div>
+                                    <div class="line-break"></div>
+
+                                    <h5>【★★☆】Finger Dataの利用</h5>
+                                    <div class="step">
+                                        <p>
+                                            Finger Dataを使用することでAngleMotionsを使わずにHandMotions内で指の動作を作成することができます。
+                                            しかし、Finger Dataで制御した指の動作はHandMotionsの動作再生の最後に行うため、指の移動を細かく制御したい場合はAngleMotionsを使用する必要があります。
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
