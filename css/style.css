@@ -390,7 +390,7 @@ body {
     padding-bottom: 7vh;
 }
 .main-topic-block {
-    width: 75vw;
+    width: 70vw;
     padding-top: 5vh;
     background-color: #ffffff;
     border: 2px solid #eaeaea;
@@ -398,10 +398,10 @@ body {
     box-shadow: 0 2px 8px rgba(160, 160, 160, 0.4);
 }
 .main-topic .section-1 {
-    padding-bottom: 3vh;
+    padding-bottom: 9vh;
 }
 .main-topic .section-1 .section-2 {
-    padding-bottom: 3vh;
+    padding-bottom: 6vh;
 }
 .main-topic .section-3 {
     padding-bottom: 3vh;
@@ -656,4 +656,39 @@ pre code{
 	border-left: 0.2vw solid #00a5a0;
 	border-right: 0.2vw solid #00a5a0;
     font-size: 1.2vw;
+}
+
+.tips-outline {
+    width: 85%;
+	transition: .3s;
+	overflow: hidden;
+	margin-top: -1vh;
+    padding-left: 4vw;
+	padding-bottom: 2vh;
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+.tips-title {
+	display: block;
+	padding-left: 0.5vw;
+    padding-top: 0.2vh;
+    padding-bottom: 0.2vh;
+    transition: .3s;
+	background-color: #e59100;
+	font-size: 1.5vw;
+	font-weight: bold;
+	color: #fff;
+	&:hover {
+		cursor: pointer;
+	}
+}
+.tips-text {
+	padding: 1vw;
+    padding-right: 3vw;
+	background-color: #ffda9b;
+	border-bottom: 0.2vw solid #e59100;
+	border-left: 0.2vw solid #e59100;
+	border-right: 0.2vw solid #e59100;
+    font-size: 1.1vw;
 }
