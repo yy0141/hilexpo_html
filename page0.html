@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0から始めるアンドロイドのモーション制作</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="headline">
+            <a href="https://www.atr.jp/" target="_blank" class="logo">
+                <img src="img/atr_logo.png" alt="ATR">
+            </a>
+            <div class="title">
+                <h1>0から始めるアンドロイドのモーション制作</h1>
+            </div>
+        </div>
+        <div class="auther">
+            <div class="text">
+                <p class="name">久保, 藤木, 安井, 山本</p>
+                <p class="date">2025.00.00に更新</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="side-menu">
+            <div class="menu-contents">
+                <div class="hamburger-menu">
+                    <button class="toggle-btn">
+                        <img src="img/hamburger_menu.png" alt="ハンバーガーメニュー" id="hamburger_menu">
+                    </button>
+                </div>
+                <script>
+                    const toggleBtn = document.querySelector('.toggle-btn');
+                    const sideMenu = document.querySelector('.side-menu');
+                    const sideMenuContents = document.querySelector('.menu-contents');
+
+                    toggleBtn.addEventListener('click', () => {
+                        sideMenu.classList.toggle('closed');
+                        sideMenuContents.classList.toggle('closed');
+                    });
+                </script>
+                <div class="menu-title">
+                    <h2>Contents</h2>
+                    <div class="underline-menu"></div>
+                </div>                       
+                <div class="menu-link">
+                    <p>00. ホーム</p>
+                    <a href="page1.html">01. 環境構築</a>
+                    <a href="page2.html">
+                        02. Miracle Human</br>
+                        
+                    </a>
+                    <a href="page3.html">03. モーションの作成方法</a>
+                    <a href="page4.html">04. チュートリアル</a>
+                    <a href="page5.html">05. 事例紹介</a>
+                </div>
+            </div>
+            <script>
+                const buttons_1 = document.querySelectorAll('.accordion-button-1');
+                buttons_1.forEach(button => {
+                  button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+                  });
+                });
+
+                const buttons_2 = document.querySelectorAll('.accordion-button-2');
+                buttons_2.forEach(button => {
+                  button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+                  });
+                });
+            </script>              
+        </div>
+        <div class="main-contents">
+            <div class="theme">
+                <button class="slider-button" id="prevBtn">＜</button>
+                <div class="slider-container" id="hide">
+                  <div class="slider">
+                    <a href="https://expo2025future-of-life.com/" target="_blank" class="slider-wrapper">
+                      <img src="img/index/theme.png" alt="いのちの未来">
+                    </a>
+                    <a href="https://expo2025future-of-life.com/" target="_blank" class="slider-wrapper">
+                        <img src="img/index/theme.png" alt="いのちの未来">
+                    </a>
+                    <a href="https://expo2025future-of-life.com/" target="_blank" class="slider-wrapper">
+                        <img src="img/index/theme.png" alt="いのちの未来">
+                    </a>
+                    <a href="https://expo2025future-of-life.com/" target="_blank" class="slider-wrapper">
+                        <img src="img/index/theme.png" alt="いのちの未来">
+                    </a>
+                    <a href="https://expo2025future-of-life.com/" target="_blank" class="slider-wrapper">
+                        <img src="img/index/theme.png" alt="いのちの未来">
+                    </a>
+                    <a href="https://expo2025future-of-life.com/" target="_blank" class="slider-wrapper">
+                        <img src="img/index/theme.png" alt="いのちの未来">
+                    </a>
+                    <a href="https://expo2025future-of-life.com/" target="_blank" class="slider-wrapper">
+                        <img src="img/index/theme.png" alt="いのちの未来">
+                    </a>
+                  </div>
+                </div>
+                <button class="slider-button" id="nextBtn">＞</button>
+            </div>
+            <script>
+                const hogeElement = document.getElementById('hide')
+
+                hogeElement.addEventListener('click', (event) => {
+                    if (event.detail === 5) {
+                        window.open('https://www.kindai.ac.jp/', '_blank');
+                    }
+                })
+            </script>
+            <script>
+                const slider = document.querySelector('.slider');
+                const wrappers = document.querySelectorAll('.slider-wrapper');
+                const totalSlides = wrappers.length;
+            
+                let currentIndex = 0;
+                let intervalId;
+                let wrapperWidth = 0;
+            
+                function updateSliderOffset() {
+                    const firstWrapper = wrappers[0];
+                    const computedStyle = window.getComputedStyle(firstWrapper);
+                    const marginLeft = parseFloat(computedStyle.marginLeft);
+
+                    // wrapperの幅を計算（要素の幅＋左右マージン）
+                    wrapperWidth = firstWrapper.offsetWidth + marginLeft * 2;
+
+                    if (currentIndex != 0) {
+                        slider.style.transition = 'none';
+                        const offset = currentIndex * wrapperWidth;
+                        slider.style.transform = `translateX(-${offset}px)`
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => {
+                                slider.style.transition = 'transform 1s ease-in-out';
+                            });
+                        });
+                    }
+
+                    // 初期位置：中央に来るようにオフセット
+                    const offset = (totalSlides - 1) * wrapperWidth;
+                    slider.style.marginLeft = `${offset}px`;
+                }
+
+                window.onload = function () {
+                    updateSliderOffset();
+                };
+
+                window.onresize = function () {
+                    updateSliderOffset();
+                };
+            
+                function updateSlider() {
+                    const offset = currentIndex * wrapperWidth;
+                    slider.style.transform = `translateX(-${offset}px)`;
+                }
+            
+                function slideNext() {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateSlider();
+                }
+            
+                function slidePrev() {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateSlider();
+                }
+            
+                document.getElementById('nextBtn').addEventListener('click', () => {
+                    slideNext();
+                    resetInterval();
+                });
+            
+                document.getElementById('prevBtn').addEventListener('click', () => {
+                    slidePrev();
+                    resetInterval();
+                });
+            
+                function startAutoSlide() {
+                    intervalId = setInterval(slideNext, 7000);
+                }
+            
+                function resetInterval() {
+                    clearInterval(intervalId);
+                    startAutoSlide();
+                }
+            
+                startAutoSlide();
+            </script>
+            <div class="contents">
+                <h2>CONTENTS</h2>
+                <div class="underline-contents"></div>
+                <div class="outline-block">
+                    <a href="page1.html" class="outline">
+                        <img src="img/index/outline1.png" alt="環境構築" class="outline1">
+                        <div>01 環境構築</div>
+                    </a>
+                    <a href="page2.html" class="outline">
+                        <img src="img/index/outline2.png" alt="Miracle Humanについて" class="outline2">
+                        <div>
+                            02 Miracle Human</br>
+                        </div>
+                    </a>
+                    <a href="page3.html" class="outline">
+                        <img src="img/index/outline3.png" alt="モーションの作成方法" class="outline3">
+                        <div>03 モーションの作成方法</div>
+                    </a>
+                    <a href="page4.html" class="outline">
+                        <img src="img/index/outline4.png" alt="事例紹介" class="outline4">
+                        <div>04 事例紹介</div>
+                    </a>
+                </div>
+            </div>
+            <div class="main-topic">
+                <div class="main-topic-block">
+                    <div class="section-1 section1" id="section1">
+                        <h2>00. このWebサイトについて</h2>
+                        <div class="underline-headline-1"></div>
+                        <p>
+                            このWebサイトは、2025年に開催した大阪・関西万博のシグネチャーパビリオン「いのちの未来」で展示されたアンドロイドのモーション制作を行なった近畿大学一期生の久保、藤木、安井、山本を著書とした、Miracle Humanを使用したアンドロイドのモーション制作方法のガイドラインとなっています。</br></br>
+                            Miracle HumanがUnityを使用したツールであり、本サイトでも専門用語を使用しているため、動画を見ながらサイトを確認をし、十分な理解を行なってから進むことを推奨しています。</br></br>
+                            また、Miracle Humanの全ての機能を使用しないとモーションを制作できないわけではなく、使用しない機能や触ってはいけないものもありますが、本サイトで解説を行なっている範囲は頻度に大小はあれ、使用する可能性があるものとなっています。</br></br>
+                            最後に、Unityを操作する際はマウスがなくても十分に使うことができますが、使いやすさが大幅に変わるため、マウスの使用を推奨しています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
