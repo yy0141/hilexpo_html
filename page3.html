@@ -155,7 +155,7 @@
                                         var p = document.getElementById(id);
                                         for (var i = 0; i < json.length; i++) {    
                                             var span = document.createElement('span');
-                                            span.classList.add("parameter-list");
+                                            span.classList.add("parameter-list")
                                             var strong = document.createElement('strong');
                                             var br = document.createElement('br');
                                             if(json[i].Color == 1) {
@@ -233,7 +233,7 @@
                                         5. Motion Hand Data内の<strong>名前ID</strong>を変更します。</br>
                                         6. Debug Settingsの<strong>Motion Edit Mode On</strong>をクリックします。</br>
                                         7. Hierarchyウィンドウから<strong>RightHandController</strong>もしくは<strong>LeftHandController</strong>を選択し、</br>
-                                        &ensp;&thinsp;&thinsp; Scene画面上で動かしたい位置・角度に動かします。</br>
+                                        &ensp;&thinsp;&thinsp; Sceneビュー上で手を動かしたい位置・角度に動かします。</br>
                                         8. 3で命名したID名に対応する<strong>Modify to the current position</strong>をクリックします。</br>
                                         9. Motion Hand Data内にある<strong>移動速度[m/s]</strong>もしくは<strong>移動時間[msec]</strong>と<strong>姿勢保持時間[msec]</strong>を調整します。</br>
                                         &ensp;&thinsp;&thinsp; その後、<strong>移動軌跡（座標）</strong>と<strong>回転軌跡（角度）</strong>の右にあるグラフを押し、お好みのグラフに変更します。</br>
@@ -255,7 +255,7 @@
                                 
                                 <h5>Level2</h5>
                                 <p>
-                                    Level1を発展させ、より複雑な動きを作成します。
+                                    Level1を発展させ、複数の動作を繋ぎ、より複雑な動きを作成します。
                                 </p>
                                 <div class="step">
                                     <p>
@@ -285,8 +285,8 @@
                                 </p>
                                 <div class="step">
                                     <p>
-                                        1. Level2の通りに、Motion Hand Dataに3つ以上の動作を作成します。</br>
-                                        2. 最初と最後以外の動作の、Motion Hand Data内にある<strong>ベジェ曲線の中間点</strong>にチェックします。</br>
+                                        1. Level2の通りに、Motion Hand Dataに3つの動作を作成します。</br>
+                                        2. 2つ目の動作の、Motion Hand Data内にある<strong>ベジェ曲線の中間点</strong>にチェックします。</br>
                                         3. 2で操作した動作に対応する<strong>Modify to the current position</strong>をクリックします。</br>
                                         4. 最後に、manageの<strong>Save to file</strong>をクリックします。
                                     </p>
@@ -344,7 +344,7 @@
                                     </div>
                                     <div class="line-break"></div>
 
-                                    <h5>【★☆☆】Finger Dataの利用</h5>
+                                    <h5>【★★☆】Finger Dataの利用</h5>
                                     <div class="step">
                                         <p>
                                             Finger Dataを使用することでAngleMotionsを使わずにHandMotions内で指の動作を作成することができます。
@@ -428,36 +428,17 @@
 
                             <div class="section-3 section3-2-3" id="section3-2-3">
                                 <h4>03. モーション制作のコツ</h3>
-                                <h5>【★★★】ベジェ曲線の利用</h5>
+                                <h5>【★☆☆】Keep Until New Element Additionの利用</h5>
                                 <div class="step">
                                     <p>
-                                        ベジェ曲線を使用することで丸みを帯びた動作を作ることができ、人間らしさが出る様になる。</br>
-                                        以下の様に、id名を1、2、3と名付け、2の<strong>Is Bezier Curve Point</strong>をオンにすると以下の画像のように曲線の移動が可能になります。
-                                        ベジェ曲線は連続で何個も使用可能であり、より複雑な曲線移動も可能になっています。
-                                    </p>
-                                    <div class="img">
-                                        <a href="img/page3/bezier.jpg" rel="lightbox"><img src="img/page3/bezier.jpg" style="width: 30%;"></a>
-                                    </div>
-                                </div>
-                                <div class="line-break"></div>
-
-                                <h5>【★★☆】IKオフセットの利用</h5>
-                                <div class="step">
-                                    <p>
-                                        IKオフセットを使用することで、HandMotionsで作成したモーションにおいて、手の位置をそのままにし、それ以外の腕の各軸の角度を調整することができます。
-                                        例えば、右手で心臓を触る動作を作ると脇が開いてしまうため、IKオフセットで<strong>RightScapula_Joint</strong>を使用し、<strong>Target Angle</strong>を調整することで脇を多少締めることができます。
-                                    </p>
-                                </div>
-                                <div class="line-break"></div>
-
-                                <h5>【★☆☆】Finger Dataの利用</h5>
-                                <div class="step">
-                                    <p>
-                                        Finger Dataを使用することでAngleMotionsを使わずにHandMotions内で指の動作を作成することができます。
-                                        しかし、Finger Dataで制御した指の動作はHandMotionsの動作再生の最後に行うため、指の移動を細かく制御したい場合はAngleMotionsを使用する必要があります。
+                                        AngleMotionsはHandMotionsと違い、姿勢保持時間を超えると自動でDefaultの姿勢に戻ってしまいます。
+                                        AngleMotionsの性質上、他の要素と組み合わせて使用する場合が多く、単体での使用がほとんどありません。
+                                        そのため、他の動作とのタイミングを調整するために姿勢保持時間を使用するのではなく、<strong>Keep Until New Element Addition</strong>を使用し、タイミングを調整することをおすすめしています。</br>
+                                        <span style="color: red;"><strong>Keep Until New Element Addition</strong>を使用する際は、次の動作を再生するまで姿勢を維持することに気をつけてください。</span>
                                     </p>
                                 </div>
                             </div>
+                            <div class="line-break"></div>
                         </div>
                         
                         <div class="section-2 section3-3" id="section3-3">
@@ -505,6 +486,25 @@
                                         4. <strong>Key</strong>から動かしたい部位を選び、<strong>Value</strong>を押し、<strong>Value</strong>の値を変更します</br>
                                         5. 最後に、<strong>Save to file</strong>をクリックします。
                                     </p>
+                                </div>
+                                <div class="line-break"></div>
+
+                                <div class="section-3 section3-3-3" id="section3-3-3">
+                                    <h4>03. モーション制作のコツ</h3>
+                                    <h5>【★★☆】アンドロイドの発話と表情の再生タイミングの調整</h5>
+                                    <div class="step">
+                                        <p>
+                                            アンドロイドに発話をさせる場合、最後の口の形によっては口を開けた状態になる場合がある。そのため、口を閉じる表情を発話後に入れることをおすすめします。
+                                        </p>
+                                    </div>
+                                    <div class="line-break"></div>
+
+                                    <h5>【★☆☆】CPG Scaleの利用</h5>
+                                    <div class="step">
+                                        <p>
+                                            CPG Scaleを使用することで、呼吸動作に合わせた口や瞼の開閉をさせることができるため、特定のタイミングで明確にこの表情をさせたい場合以外は使用することをおすすめします。
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -595,6 +595,52 @@
                                         1. Level1を繰り返し、2つ以上の動作を作成する。</br>
                                         2. Level1を繰り返し、<strong>Predefined Action</strong>にLevel4の1で作成した動作名を記入する。</br>
                                         3. 最後に<strong>Save</strong>をクリックします。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+                            </div>
+
+                            <div class="section-3 section3-4-3" id="section3-4-3">
+                                <h4>03. モーション制作のコツ</h3>
+                                <h5>【★☆☆】頻繁に使用する動作をまとめる</h5>
+                                <div class="step">
+                                    <p>
+                                        正面を向く、胴体を右に曲げるなど頻繁に使用する可能性のある動作は、一つのActionとして保存し、使用する際に、Action内でActionを呼び出すことで、同じ動作を複数回作成する手間を省くことが可能です。</br>
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+
+                                <h5>【★☆☆】AngleMotionsの回転時間・相対角度をActionsで調整する</h5>
+                                <div class="step">
+                                    <p>
+                                        AngleMotionsで可動域を最大・最小にした動作をあらかじめ作成しておくことで、可動域の大きさごとにAngleMotionsで動作を作成せずとも、Actionsで<strong>Intensity</strong>を調整することで、可動域を変えることができます。
+                                        例えば、Spine_Joint（胴体）のx軸（前後）の動作であらかじめ、<strong>Target Rotation</strong>を-12.5（最小）にした動作を作成する。
+                                        その後、Actions内で<strong>Intensity</strong>を0.4にすると、<strong>Target Rotation</strong>が -12.5 × 0.4 = -5と変更することができます。</br>
+                                        この方法を使用する際に、<strong>Keep Until New Element Addition</strong>をオンにしている場合は、「AngleMotionsの姿勢保持時間をActionsで調整する」の様に、事前にAngleMotionsをDefaultに戻す動作をActionsで作成する必要があります。
+                                    </p>
+                                    <div class="pptx">
+                                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRi4rUZU0uNqJemum6NUcIDj9oInONmIcyKhOAkRjXysul_nl3JKcf4QnKfJH5wSh8dyJZE89H0LSKJ/pubembed?start=false&loop=false&delayms=3000" allow="fullscreen"></iframe>
+                                    </div>
+                                </div>
+                                <div class="line-break"></div>
+
+                                <h5>【★☆☆】AngleMotionsの姿勢保持時間をActionsで調整する</h5>
+                                <div class="step">
+                                    <p>
+                                        AngleMotionsで①<strong>Keep Until New Element Addition</strong>をオンにした動作と、②Defaultに戻る動作（<strong>Keep Until New Element Addition</strong>はオン・オフどちらでも可）を作成する。
+                                        その後、Actionsで①を再生し、<strong>Start Delay</strong>を使い一定時間経過してから②を再生することで、<strong>Keep Until New Element Addition</strong>をオフにした動作を同じ様な動作を実現できる。
+                                        この方法を使用することで、AngleMotionsで<strong>Keep Time</strong>に差をつけた動作を複数作成せずに、Actionsで<strong>Start Delay</strong>を調整するだけで、姿勢保持時間を自由に変更できる様になります。
+                                    </p>
+                                    <div class="pptx">
+                                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSrknma8XtDTXh_OzY0mAY8QMiB4ZeAk8MuP_wWBwUQJ3viwxtYH77TGT9rVeUXZ3o6eaD3KgttbDYS/pubembed?start=false&loop=false&delayms=3000" allow="fullscreen"></iframe>
+                                    </div>
+                                </div>
+                                <div class="line-break"></div>
+
+                                <h5>【★☆☆】CPG Scaleの利用</h5>
+                                <div class="step">
+                                    <p>
+                                        CPG Scaleを使用することで、呼吸動作に合わせた口や瞼の開閉をさせることができるため、特定のタイミングで明確にこの表情をさせたい場合以外は使用することをおすすめします。
                                     </p>
                                 </div>
                             </div>
@@ -714,6 +760,9 @@
                                         5. 最後に保存をして終わりです。
                                     </p>
                                 </div>
+                                <div class="line-break"></div>
+                            </div>
+                            
                             <div class="section-3 section3-5-3" id="section3-5-3">
                                 <h4>03. モーションの作成方法</h3>
                                 <h5>Level1</h5>
@@ -723,7 +772,7 @@
                                 <div class="step">
                                     <p>
                                         1. 作成したbatファイルを実行します。</br>
-                                        2. <strong>HandMotions</strong>で、既存の動作のコピーを作成します。</br>
+                                        2. <strong>HandMotions</strong>で、既存の動作のコピー&ペーストを作成します。</br>
                                         3. <strong>Motion Hand Data</strong> → 要素と開きます。</br>
                                         4. <strong>このオブジェクトに対する動き（主に位置）</strong>に、1で生成したオブジェクト名を記入します。</br>
                                         5. モーションの作成を行います。</br>
