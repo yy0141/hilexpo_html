@@ -93,7 +93,7 @@
                             また、Unityの操作方法の解説は行いため、Unityの操作方法を知りたい方はUnity公式からをご確認ください。
                         </p>
                         <div class="mov">
-                            <video src="mov/page2.mp4" controls></video>
+                            <iframe src="https://drive.google.com/file/d/1NXltuzqFzIRHXwImXRBB5rB2E7V3ypTm/preview" allow="fullscreen"></iframe>
                         </div>
                         <div class="line-break"></div>
 
@@ -118,15 +118,15 @@
                             <p>
                                 SpringManは以下のように構成されており、以下のオブジェクトを中心に使用していきます。</br>
                                 <strong>Actions</strong>、<strong>Motions</strong>、<strong>Facials</strong>はモーションを制作するために使用し、
-                                <strong>BodyController</strong>、<strong>HeadController</strong>、<strong>EyeController</strong>、<strong>LeftHandController</strong>、<strong>RightHandController</strong>は各部位の制御として使用します。
-                                また、<strong>BodyBase_Joint</strong>には50以上のアンドロイドの各軸が含まれており、これらを制御することでさまざまな動作を作成することができます。
+                                <strong>BodyController</strong>は胴体、<strong>HeadController</strong>は頭部、<strong>EyeController</strong>は両目、<strong>LeftHandController</strong>は左腕、<strong>RightHandController</strong>は右腕と、各部位の制御として使用します。
+                                また、<strong>BodyBase_Joint</strong>には50以上のアンドロイドの各軸（部位）が含まれており、これらを制御することでさまざまな動作を作成することができます。
                             </p>
                             <div class="img">
                                 <a href="img/page2/hierarchy_springman.jpg" rel="lightbox"><img src="img/page2/hierarchy_springman.jpg"></a>
                             </div></br>
                             <p>
-                                Motionsにはモーションを作成するオブジェクトが含まれており、HandMotions、AngleMotionsをしようしていきます。
-                                それ以外はしようしませんので、気にしなくて結構です。
+                                Motionsにはモーションを作成するオブジェクトが含まれており、HandMotions、AngleMotionsを使用していきます。
+                                それ以外は使用しませんので、気にしなくて結構です。
                             </p>
                             <div class="img">
                                 <a href="img/page2/motions.jpg" rel="lightbox"><img src="img/page2/motions.jpg"></a>
@@ -172,7 +172,14 @@
                             <div class="section-2 section2-3-1" id="section2-3-1">
                                 <h4>Game</h4>
                                 <p>
-                                    ボタンを押すことで各ウィンドウを展開することが可能です。</br>
+                                    下の画像の様に、画面上部にあるタブから<strong>Game</strong>タブを選択してください。
+                                </p>
+                                <div class="img">
+                                    <a href="img/page2/game_tab.jpg" rel="lightbox"><img src="img/page2/game_tab.jpg"></a>
+                                </div></br>
+                                <p>
+                                    <strong>Game</strong>タブを押すと下の様にアンドロイドが鎮座したGameビューに変化します。</br>
+                                    このタブでは、ボタンを押すことで各ウィンドウを展開することが可能です。</br>
                                     今回は使用頻度が多いMotion・Faceウィンドウについて見てみましょう。</br>
                                     <span style="color: red;">※Parameters・Axisウィンドウはほとんど使用しません。</span></br>
                                 </p>
@@ -195,7 +202,13 @@
 
                                 <h4>Scene</h4>
                                 <p>
-                                    Scene画面を使用し、以下のように両手の位置や角度を可動域内で自由に動かすことができます。</br>
+                                    今度は、<strong>Game</strong>タブの隣にある<strong>Scene</strong>タブを選択してください。
+                                </p>
+                                <div class="img">
+                                    <a href="img/page2/scene_tab.jpg" rel="lightbox"><img src="img/page2/scene_tab.jpg"></a>
+                                </div></br>
+                                <p>
+                                    ここでは、以下のように両手の位置や角度を可動域内で自由に動かすことができます。</br>
                                     <span style="color: red;">
                                         ※操作前に、Debug Settingsで<strong>Motion Edit Mode On</strong>を押す必要があります。
                                     </span>
@@ -203,7 +216,11 @@
                                 <div class="video-row">
                                     <video src="mov/righthandcontroller_position.mov" muted controls></video>
                                     <video src="mov/righthandcontroller_rotate.mov" muted controls></video>
-                                </div>
+                                </div></br>
+                                <p>
+                                    Sceneビューでの詳しい操作方法については以下のリンクを確認してください。
+                                    <a href= "https://docs.unity3d.com/ja/2020.3/Manual/SceneViewNavigation.html" target="_blank">https://docs.unity3d.com/ja/2020.3/Manual/SceneViewNavigation.html</a>
+                                </p>
                                 <div class="line-break"></div>
 
                                 <h4>Debug Settings</h4>

@@ -67,21 +67,25 @@
                         <div class="accordion-panel-2">
                             <a href="#section3-1-1">01. 各種パラメータについて</a>
                             <a href="#section3-1-2">02. 作成方法</a>
+                            <a href="#section3-1-3">03. モーション制作のコツ</a>
                         </div>
                         <button class="accordion-button-2">02. AngleMotions</button>
                         <div class="accordion-panel-2">
                             <a href="#section3-2-1">01. 各種パラメータについて</a>
                             <a href="#section3-2-2">02. 作成方法</a>
+                            <a href="#section3-2-3">03. モーション制作のコツ</a>
                         </div>
                         <button class="accordion-button-2">03. Facials</button>
                         <div class="accordion-panel-2">
                             <a href="#section3-3-1">01. 各種パラメータについて</a>
                             <a href="#section3-3-2">02. 作成方法</a>
+                            <a href="#section3-3-3">03. モーション制作のコツ</a>
                         </div>
                         <button class="accordion-button-2">04. Actions</button>
                         <div class="accordion-panel-2">
                             <a href="#section3-4-1">01. 各種パラメータについて</a>
                             <a href="#section3-4-2">02. 作成方法</a>
+                            <a href="#section3-4-3">03. モーション制作のコツ</a>
                         </div>
                         <button class="accordion-button-2">
                             05. オブジェクトを利用した</br>
@@ -91,6 +95,7 @@
                             <a href="#section3-5-1">01. 各種パラメータについて</a>
                             <a href="#section3-5-2">02. オブジェクトの作成方法</a>
                             <a href="#section3-5-3">03. モーションの作成方法</a>
+                            <a href="#section3-5-3">03. モーション制作のコツ</a>
                         </div>
                     </div>
                 </div>
@@ -124,7 +129,11 @@
                         <h2>03. モーションの制作方法</h2>
                         <div class="underline-headline-1"></div>
                         <p>
-                            この章では、モーションの制作方法をLevelに分けて説明していきます。</br>
+                            この章では、パラメータ、モーションの制作方法を説明していきます。</br></br>
+                            「各種パラメータについて」の<span style="color: red;">赤字</span>は使用頻度が比較的高く、重要なパラメータとなっています。
+                            パラメータの数は事情に多いので、最初は<span style="color: red;">赤字</span>のパラメータに焦点を当て流ことをおすすめします。</br></br>
+                            また、「操作方法」の<strong>Level</strong>は難易度・重要度を表しており、数字が大きいほど難易度も上がりますが、人間らしい動作を作成したい場合は、すべての<strong>Level</strong>を使用できる様になっておく必要があります。</br>
+                            そして、「モーション制作のコツ」の★は重要度を表しており、数が多いほど重要なコツになります。
                         </p>
                         <div class="line-break"></div>
 
@@ -146,6 +155,7 @@
                                         var p = document.getElementById(id);
                                         for (var i = 0; i < json.length; i++) {    
                                             var span = document.createElement('span');
+                                            span.classList.add("parameter-list");
                                             var strong = document.createElement('strong');
                                             var br = document.createElement('br');
                                             if(json[i].Color == 1) {
@@ -334,7 +344,7 @@
                                     </div>
                                     <div class="line-break"></div>
 
-                                    <h5>【★★☆】Finger Dataの利用</h5>
+                                    <h5>【★☆☆】Finger Dataの利用</h5>
                                     <div class="step">
                                         <p>
                                             Finger Dataを使用することでAngleMotionsを使わずにHandMotions内で指の動作を作成することができます。
@@ -411,6 +421,40 @@
                                         2. Motion Hand Data内の<strong>名前ID</strong>を変更します。</br>
                                         3. Level1の3 ~ 8を繰り返し行います。</br>
                                         4. Level2の1 ~ 3を繰り返し行い、モーションの作成を行います。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="line-break"></div>
+
+                            <div class="section-3 section3-2-3" id="section3-2-3">
+                                <h4>03. モーション制作のコツ</h3>
+                                <h5>【★★★】ベジェ曲線の利用</h5>
+                                <div class="step">
+                                    <p>
+                                        ベジェ曲線を使用することで丸みを帯びた動作を作ることができ、人間らしさが出る様になる。</br>
+                                        以下の様に、id名を1、2、3と名付け、2の<strong>Is Bezier Curve Point</strong>をオンにすると以下の画像のように曲線の移動が可能になります。
+                                        ベジェ曲線は連続で何個も使用可能であり、より複雑な曲線移動も可能になっています。
+                                    </p>
+                                    <div class="img">
+                                        <a href="img/page3/bezier.jpg" rel="lightbox"><img src="img/page3/bezier.jpg" style="width: 30%;"></a>
+                                    </div>
+                                </div>
+                                <div class="line-break"></div>
+
+                                <h5>【★★☆】IKオフセットの利用</h5>
+                                <div class="step">
+                                    <p>
+                                        IKオフセットを使用することで、HandMotionsで作成したモーションにおいて、手の位置をそのままにし、それ以外の腕の各軸の角度を調整することができます。
+                                        例えば、右手で心臓を触る動作を作ると脇が開いてしまうため、IKオフセットで<strong>RightScapula_Joint</strong>を使用し、<strong>Target Angle</strong>を調整することで脇を多少締めることができます。
+                                    </p>
+                                </div>
+                                <div class="line-break"></div>
+
+                                <h5>【★☆☆】Finger Dataの利用</h5>
+                                <div class="step">
+                                    <p>
+                                        Finger Dataを使用することでAngleMotionsを使わずにHandMotions内で指の動作を作成することができます。
+                                        しかし、Finger Dataで制御した指の動作はHandMotionsの動作再生の最後に行うため、指の移動を細かく制御したい場合はAngleMotionsを使用する必要があります。
                                     </p>
                                 </div>
                             </div>
